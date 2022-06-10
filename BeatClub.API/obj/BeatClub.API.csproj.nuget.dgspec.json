@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Josmar\\Documents\\WebJS\\BeatClub.API\\BeatClub.API\\BeatClub.API.csproj": {}
+    "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Josmar\\Documents\\WebJS\\BeatClub.API\\BeatClub.API\\BeatClub.API.csproj": {
+    "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Josmar\\Documents\\WebJS\\BeatClub.API\\BeatClub.API\\BeatClub.API.csproj",
+        "projectUniqueName": "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj",
         "projectName": "BeatClub.API",
-        "projectPath": "C:\\Users\\Josmar\\Documents\\WebJS\\BeatClub.API\\BeatClub.API\\BeatClub.API.csproj",
+        "projectPath": "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj",
         "packagesPath": "C:\\Users\\Josmar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Josmar\\Documents\\WebJS\\BeatClub.API\\BeatClub.API\\obj\\",
+        "outputPath": "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Josmar\\AppData\\Roaming\\NuGet\\NuGet.Config",

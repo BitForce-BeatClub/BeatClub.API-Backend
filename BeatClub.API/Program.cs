@@ -43,6 +43,8 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 builder.Services.AddScoped<IMessageService, MessageService>();
+builder.Services.AddScoped<ISongListRepository, SongListRepository>();
+builder.Services.AddScoped<ISongListService, SongListService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 //AutoMapper Configuration

@@ -46,6 +46,7 @@ namespace BeatClub.API.Learning.Services
             if (existingUser == null)
                 return new UserResponse("User not found.");
 
+            existingUser.Nickname = user.Nickname;
             existingUser.Password = user.Password;
             existingUser.TypeUser = user.TypeUser;
 

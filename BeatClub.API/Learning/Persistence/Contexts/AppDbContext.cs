@@ -1,6 +1,7 @@
 ﻿using BeatClub.API.Learning.Domain.Models;
 using BeatClub.API.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
 
 namespace BeatClub.API.Learning.Persistence.Contexts
@@ -13,6 +14,7 @@ namespace BeatClub.API.Learning.Persistence.Contexts
 
         public DbSet<User> Users { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<SongList> SongLists { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -22,6 +24,7 @@ namespace BeatClub.API.Learning.Persistence.Contexts
             builder.Entity<User>().ToTable("Users");
             builder.Entity<User>().HasKey(p => p.Id);
             builder.Entity<User>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<User>().Property(p => p.Nickname).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.Password).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.TypeUser).IsRequired().HasMaxLength(50);
             
@@ -39,6 +42,16 @@ namespace BeatClub.API.Learning.Persistence.Contexts
             builder.Entity<Message>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Message>().Property(p => p.Content).IsRequired().HasMaxLength(120);
             //builder.Entity<Message>().Property(p => p.CreatAt).IsRequired();
+            
+            //SongList
+            builder.Entity<SongList>().ToTable("SongLists");
+            builder.Entity<SongList>().HasKey(p => p.Id);
+            builder.Entity<SongList>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<SongList>().Property(p => p.Name).IsRequired().HasMaxLength(50);
+            builder.Entity<SongList>().Property(p => p.Description).IsRequired().HasMaxLength(120);
+            builder.Entity<SongList>().Property(p => p.UserId).IsRequired();
+            builder.Entity<SongList>().Property(p => p.CreateAt).IsRequired();
+                
 
 
 

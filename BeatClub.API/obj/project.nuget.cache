@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wruJxLnrlB+mQYEuAZ7zIv3XJ4Xo6q10AzvTJepff1vT43/VlUDTG6FNAAM0c2U1s6+tpIumNgItGlatZe/CkA==",
+  "dgSpecHash": "3ALNmJr1/PApoRJsi6zovKsiHB6Qh8jivjlgKkDHYnYU0uTagFeTPhuCdaUJMKejTtdFheuulpjDta4YaCNLcQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Josmar\\Documents\\WebJS\\BeatClub.API\\BeatClub.API\\BeatClub.API.csproj",
+  "projectFilePath": "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Josmar\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Josmar\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
