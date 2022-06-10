@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BeatClub.API.Learning.Controllers
 {
     [ApiController]
-    [Route("/api/v1/songlists/{songListId}/songs")]
+    [Route("/api/v1/songLists/{songListId}/songs")]
     public class SongListSongsController : ControllerBase
     {
         private readonly ISongService _songService;
