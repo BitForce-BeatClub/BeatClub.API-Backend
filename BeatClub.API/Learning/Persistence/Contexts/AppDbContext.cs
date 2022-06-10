@@ -16,6 +16,8 @@ namespace BeatClub.API.Learning.Persistence.Contexts
         public DbSet<Message> Messages { get; set; }
         public DbSet<SongList> SongLists { get; set; }
 
+        public DbSet<Song> Songs { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -50,9 +52,17 @@ namespace BeatClub.API.Learning.Persistence.Contexts
             builder.Entity<SongList>().Property(p => p.Name).IsRequired().HasMaxLength(50);
             builder.Entity<SongList>().Property(p => p.Description).IsRequired().HasMaxLength(120);
             builder.Entity<SongList>().Property(p => p.UserId).IsRequired();
-            builder.Entity<SongList>().Property(p => p.CreateAt).IsRequired();
+            //builder.Entity<SongList>().Property(p => p.CreateAt).IsRequired();
                 
-
+            //Song
+            builder.Entity<Song>().ToTable("Songs");
+            builder.Entity<Song>().HasKey(p => p.Id);
+            builder.Entity<Song>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Song>().Property(p => p.Name).IsRequired().HasMaxLength(50);
+            builder.Entity<Song>().Property(p => p.Gender).IsRequired().HasMaxLength(50);
+            builder.Entity<Song>().Property(p => p.Description).IsRequired().HasMaxLength(120);
+            builder.Entity<Song>().Property(p => p.SongListId).IsRequired();
+            //builder.Entity<Song>().Property(p => p.CreateAt).IsRequired();
 
 
 

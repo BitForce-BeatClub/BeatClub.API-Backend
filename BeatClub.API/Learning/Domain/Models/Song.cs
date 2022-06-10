@@ -12,7 +12,7 @@ namespace BeatClub.API.Learning.Domain.Models
         
         public string Description { get; set; }
         
-        public DateTime CreateAt { get; set; }
+        //public DateTime CreateAt { get; set; }
         
         public int SongListId { get; set; }
         public SongList SongList { get; set; }
