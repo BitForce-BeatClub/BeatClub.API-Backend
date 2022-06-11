@@ -47,6 +47,8 @@ builder.Services.AddScoped<ISongListRepository, SongListRepository>();
 builder.Services.AddScoped<ISongListService, SongListService>();
 builder.Services.AddScoped<ISongRepository, SongRepository>();
 builder.Services.AddScoped<ISongService, SongService>();
+builder.Services.AddScoped<IPublicationRepository, PublicationRepository>();
+builder.Services.AddScoped<IPublicationService, PublicationService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 //AutoMapper Configuration

@@ -15,8 +15,9 @@ namespace BeatClub.API.Learning.Persistence.Contexts
         public DbSet<User> Users { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<SongList> SongLists { get; set; }
-
         public DbSet<Song> Songs { get; set; }
+        
+        public DbSet<Publication> Publications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -64,7 +65,13 @@ namespace BeatClub.API.Learning.Persistence.Contexts
             builder.Entity<Song>().Property(p => p.SongListId).IsRequired();
             //builder.Entity<Song>().Property(p => p.CreateAt).IsRequired();
 
-
+            //Publication
+            builder.Entity<Publication>().ToTable("Publications");
+            builder.Entity<Publication>().HasKey(p => p.Id);
+            builder.Entity<Publication>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Publication>().Property(p => p.Name).IsRequired().HasMaxLength(50);
+            builder.Entity<Publication>().Property(p => p.Description).IsRequired().HasMaxLength(120);
+            builder.Entity<SongList>().Property(p => p.UserId).IsRequired();
 
             // Apply Snake Case Naming Conventions
             
