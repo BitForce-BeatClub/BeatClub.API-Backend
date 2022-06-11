@@ -87,7 +87,6 @@ namespace BeatClub.API.Learning.Services
             existingSong.Name = song.Name;
             existingSong.Gender = song.Gender;
             existingSong.Description = song.Description;
-            //existingMessage.CreatAt = message.CreatAt;
             existingSong.SongListId = song.SongListId;
 
             try

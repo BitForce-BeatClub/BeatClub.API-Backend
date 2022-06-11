@@ -16,7 +16,6 @@ namespace BeatClub.API.Learning.Persistence.Contexts
         public DbSet<Message> Messages { get; set; }
         public DbSet<SongList> SongLists { get; set; }
         public DbSet<Song> Songs { get; set; }
-        
         public DbSet<Publication> Publications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -28,8 +27,12 @@ namespace BeatClub.API.Learning.Persistence.Contexts
             builder.Entity<User>().HasKey(p => p.Id);
             builder.Entity<User>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<User>().Property(p => p.Nickname).IsRequired().HasMaxLength(50);
-            builder.Entity<User>().Property(p => p.Password).IsRequired().HasMaxLength(50);
+            builder.Entity<User>().Property(p => p.Firstname).IsRequired().HasMaxLength(50);
+            builder.Entity<User>().Property(p => p.Lastname).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.TypeUser).IsRequired().HasMaxLength(50);
+            builder.Entity<User>().Property(p => p.UrlImage).IsRequired().HasMaxLength(200);
+            builder.Entity<User>().Property(p => p.Trend).IsRequired().HasMaxLength(50);
+            builder.Entity<User>().Property(p => p.Result).IsRequired().HasMaxLength(50);
             
             
             //Relationships
