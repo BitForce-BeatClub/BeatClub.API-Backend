@@ -1,6 +1,7 @@
 using System;
 using BeatClub.API.Learning.Domain.Repositories;
 using BeatClub.API.Learning.Domain.Services;
+using BeatClub.API.Learning.Domain.Services.Communication;
 using BeatClub.API.Learning.Mapping;
 using BeatClub.API.Learning.Persistence.Contexts;
 using BeatClub.API.Learning.Persistence.Repositories;
@@ -43,6 +44,10 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 builder.Services.AddScoped<IMessageService, MessageService>();
+builder.Services.AddScoped<ICreatorRepository, CreatorRepository>();
+builder.Services.AddScoped<ICreatorService, CreatorService>();
+builder.Services.AddScoped<ITrackService, TrackService>();
+builder.Services.AddScoped<ITrackRepository, TrackRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 //AutoMapper Configuration

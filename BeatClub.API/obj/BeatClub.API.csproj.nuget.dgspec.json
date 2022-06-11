@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Josmar\\Documents\\WebJS\\BeatClub.API\\BeatClub.API\\BeatClub.API.csproj": {}
+    "C:\\Users\\josec\\OneDrive\\Escritorio\\BeatClub-Backend-c#\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Josmar\\Documents\\WebJS\\BeatClub.API\\BeatClub.API\\BeatClub.API.csproj": {
+    "C:\\Users\\josec\\OneDrive\\Escritorio\\BeatClub-Backend-c#\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Josmar\\Documents\\WebJS\\BeatClub.API\\BeatClub.API\\BeatClub.API.csproj",
+        "projectUniqueName": "C:\\Users\\josec\\OneDrive\\Escritorio\\BeatClub-Backend-c#\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj",
         "projectName": "BeatClub.API",
-        "projectPath": "C:\\Users\\Josmar\\Documents\\WebJS\\BeatClub.API\\BeatClub.API\\BeatClub.API.csproj",
-        "packagesPath": "C:\\Users\\Josmar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Josmar\\Documents\\WebJS\\BeatClub.API\\BeatClub.API\\obj\\",
+        "projectPath": "C:\\Users\\josec\\OneDrive\\Escritorio\\BeatClub-Backend-c#\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj",
+        "packagesPath": "C:\\Users\\josec\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josec\\OneDrive\\Escritorio\\BeatClub-Backend-c#\\BeatClub.API-Backend\\BeatClub.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Josmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\josec\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
