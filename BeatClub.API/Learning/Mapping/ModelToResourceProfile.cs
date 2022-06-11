@@ -10,6 +10,9 @@ namespace BeatClub.API.Learning.Mapping
         {
             CreateMap<User, UserResource>();
             CreateMap<Message, MessageResource>();
+            CreateMap<Creator, CreatorResource>();
+            CreateMap<Track, TrackResource>();
+
 
         }
     }
