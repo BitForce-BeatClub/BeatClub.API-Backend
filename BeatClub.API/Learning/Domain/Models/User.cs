@@ -17,7 +17,9 @@ namespace BeatClub.API.Learning.Domain.Models
         public string Trend { get; set; }
         
         public string Result { get; set; }
-
+        
+        public int MembershipId { get; set; }
+        public Membership Membership { get; set; }
         
     }
 }

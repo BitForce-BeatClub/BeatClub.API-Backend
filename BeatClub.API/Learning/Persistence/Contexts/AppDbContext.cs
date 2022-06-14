@@ -16,6 +16,8 @@ namespace BeatClub.API.Learning.Persistence.Contexts
         public DbSet<Message> Messages { get; set; }
         public DbSet<Song> Songs { get; set; }
         public DbSet<Publication> Publications { get; set; }
+        public DbSet<Membership> Memberships { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -32,7 +34,8 @@ namespace BeatClub.API.Learning.Persistence.Contexts
             builder.Entity<User>().Property(p => p.UrlToImage).IsRequired().HasMaxLength(200);
             builder.Entity<User>().Property(p => p.Trend).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.Result).IsRequired().HasMaxLength(50);
-            
+            builder.Entity<User>().Property(p => p.MembershipId).IsRequired();
+
             //Messages
             builder.Entity<Message>().ToTable("Messages");
             builder.Entity<Message>().HasKey(p => p.Id);
@@ -55,8 +58,17 @@ namespace BeatClub.API.Learning.Persistence.Contexts
             builder.Entity<Publication>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Publication>().Property(p => p.Title).IsRequired().HasMaxLength(50);
             builder.Entity<Publication>().Property(p => p.Description).IsRequired().HasMaxLength(120);
-            builder.Entity<SongList>().Property(p => p.UserId).IsRequired();
-
+           
+            //Membership
+            builder.Entity<Membership>().ToTable("Memberships");
+            builder.Entity<Membership>().HasKey(p => p.Id);
+            builder.Entity<Membership>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Membership>().Property(p => p.Title).IsRequired().HasMaxLength(50);
+            builder.Entity<Membership>().Property(p => p.Price).IsRequired();
+            builder.Entity<Membership>().Property(p => p.Feature).IsRequired().HasMaxLength(120);
+            builder.Entity<Membership>().Property(p => p.Description).IsRequired().HasMaxLength(120);
+            builder.Entity<Membership>().Property(p => p.UrlToImage).IsRequired().HasMaxLength(200);
+            
             // Apply Snake Case Naming Conventions
             
             builder.UseSnakeCaseNamingConvention();

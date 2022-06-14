@@ -53,6 +53,7 @@ namespace BeatClub.API.Learning.Services
             existingUser.UrlToImage = user.UrlToImage;
             existingUser.Trend = user.Trend;
             existingUser.Result = user.Result;
+            existingUser.MembershipId = user.MembershipId;
 
             try
             {
