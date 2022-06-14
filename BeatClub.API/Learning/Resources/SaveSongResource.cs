@@ -8,14 +8,14 @@ namespace BeatClub.API.Learning.Resources
         
         [Required]
         [MaxLength(50)]
-        public string Name { get; set; }
+        public string Title { get; set; }
         [Required]
-        [MaxLength(50)]
-        public string Gender { get; set; }
+        [MaxLength(200)]
+        public string UrlToImage { get; set; }
         [Required]
         [MaxLength(120)]
         public string Description { get; set; }
         [Required]
-        public int SongListId { get; set; }
+        public int UserId { get; set; }
     }
 }

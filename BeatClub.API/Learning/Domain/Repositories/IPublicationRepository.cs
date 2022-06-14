@@ -9,7 +9,7 @@ namespace BeatClub.API.Learning.Domain.Repositories
         Task<IEnumerable<Publication>> ListAsync();
         Task AddAsync(Publication publication);
         Task<Publication> FindByIdAsync(int publicationId);
-        Task<Publication> FindByNameAsync(string name);
+        Task<Publication> FindByTitleAsync(string title);
         Task<IEnumerable<Publication>> FindByUserIdAsync(int userId);
         void Update(Publication publication);
         void Remove(Publication publication);

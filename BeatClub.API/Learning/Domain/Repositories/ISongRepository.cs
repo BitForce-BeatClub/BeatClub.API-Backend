@@ -12,9 +12,9 @@ namespace BeatClub.API.Learning.Domain.Repositories
 
         Task<Song> FindByIdAsync(int songId);
         
-        Task<Song> FindByNameAsync(string name);
+        Task<Song> FindByTitleAsync(string title);
 
-        Task<IEnumerable<Song>> FindBySongListIdAsync(int songListId);
+        Task<IEnumerable<Song>> FindByUserIdAsync(int userId);
         
         void Update(Song song);
         

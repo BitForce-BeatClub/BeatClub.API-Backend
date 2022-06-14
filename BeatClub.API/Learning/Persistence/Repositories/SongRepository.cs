@@ -17,7 +17,7 @@ namespace BeatClub.API.Learning.Persistence.Repositories
         public async Task<IEnumerable<Song>> ListAsync()
         {
             return await _context.Songs
-                .Include(p => p.SongList)
+                .Include(p => p.User)
                 .ToListAsync();
         }
 
@@ -29,22 +29,22 @@ namespace BeatClub.API.Learning.Persistence.Repositories
         public async Task<Song> FindByIdAsync(int songId)
         {
             return await _context.Songs
-                .Include(p => p.SongList)
+                .Include(p => p.User)
                 .FirstOrDefaultAsync(p => p.Id == songId);
         }
 
-        public async Task<Song> FindByNameAsync(string name)
+        public async Task<Song> FindByTitleAsync(string title)
         {
             return await _context.Songs
-                .Include(p => p.SongList)
-                .FirstOrDefaultAsync(p => p.Name == name);
+                .Include(p => p.User)
+                .FirstOrDefaultAsync(p => p.Title == title);
         }
 
-        public async Task<IEnumerable<Song>> FindBySongListIdAsync(int songListId)
+        public async Task<IEnumerable<Song>> FindByUserIdAsync(int userId)
         {
             return await _context.Songs
-                .Where(p => p.SongListId == songListId)
-                .Include(p=>p.SongList)
+                .Where(p => p.UserId == userId)
+                .Include(p=>p.User)
                 .ToListAsync();
         }
 
@@ -55,7 +55,7 @@ namespace BeatClub.API.Learning.Persistence.Repositories
 
         public void Remove(Song song)
         {
-            _context.Songs.Update(song);
+            _context.Songs.Remove(song);
         }
     }
 }

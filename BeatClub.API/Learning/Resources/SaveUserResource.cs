@@ -19,7 +19,7 @@ namespace BeatClub.API.Learning.Resources
         
         [Required]
         [MaxLength(200)]
-        public string UrlImage { get; set; }
+        public string UrlToImage { get; set; }
         
         [Required]
         [MaxLength(50)]

@@ -31,11 +31,11 @@ namespace BeatClub.API.Learning.Persistence.Repositories
                     .FirstOrDefaultAsync(p=>p.Id==publicationId);
         }
 
-        public async Task<Publication> FindByNameAsync(string name)
+        public async Task<Publication> FindByTitleAsync(string title)
         {
             return await _context.Publications
                 .Include(p => p.User)
-                .FirstOrDefaultAsync(p => p.Name == name);
+                .FirstOrDefaultAsync(p => p.Title == title);
         }
 
         public async Task<IEnumerable<Publication>> FindByUserIdAsync(int userId)

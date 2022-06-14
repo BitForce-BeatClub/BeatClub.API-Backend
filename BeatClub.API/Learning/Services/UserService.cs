@@ -50,7 +50,7 @@ namespace BeatClub.API.Learning.Services
             existingUser.Firstname = user.Firstname;
             existingUser.Lastname = user.Lastname;
             existingUser.TypeUser = user.TypeUser;
-            existingUser.UrlImage = user.UrlImage;
+            existingUser.UrlToImage = user.UrlToImage;
             existingUser.Trend = user.Trend;
             existingUser.Result = user.Result;
 

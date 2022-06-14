@@ -12,41 +12,42 @@ namespace BeatClub.API.Learning.Services
     {
 
         private readonly ISongRepository _songRepository;
-        private readonly ISongListRepository _songListRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserRepository _userRepository;
 
-        public SongService(ISongRepository songRepository, ISongListRepository songListRepository, IUnitOfWork unitOfWork)
+        public SongService(ISongRepository songRepository, IUnitOfWork unitOfWork, IUserRepository userRepository)
         {
             _songRepository = songRepository;
-            _songListRepository = songListRepository;
             _unitOfWork = unitOfWork;
+            _userRepository = userRepository;
         }
+
 
         public async Task<IEnumerable<Song>> ListAsync()
         {
             return await _songRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Song>> ListBySongListIdAsync(int songListId)
+        public async Task<IEnumerable<Song>> ListByUserIdAsync(int userId)
         {
-            return await _songRepository.FindBySongListIdAsync(songListId);
+            return await _songRepository.FindByUserIdAsync(userId);
         }
 
         public async Task<SongResponse> SaveAsync(Song song)
         {
             // Validate User Id
 
-            var existingSongList = _songListRepository.FindByIdAsync(song.SongListId);
+            var existingUser = _userRepository.FindByIdAsync(song.UserId);
 
-            if (existingSongList == null)
-                return new SongResponse("Invalid SongList");
+            if (existingUser == null)
+                return new SongResponse("Invalid User");
             
-            // Valid Content
+            // Valid Title
 
-            var existingSongWithName = await _songRepository.FindByNameAsync(song.Name);
+            var existingSongWithTitle = await _songRepository.FindByTitleAsync(song.Title);
 
-            if (existingSongWithName != null)
-                return new SongResponse("Song Name already exists.");
+            if (existingSongWithTitle != null)
+                return new SongResponse("Song Title already exists.");
 
             try
             {
@@ -72,22 +73,22 @@ namespace BeatClub.API.Learning.Services
             
             // Validate User Id
 
-            var existingSongList = _songListRepository.FindByIdAsync(song.SongListId);
+            var existingUser = _userRepository.FindByIdAsync(song.UserId);
 
-            if (existingSongList == null)
-                return new SongResponse("Invalid SongList");
+            if (existingUser == null)
+                return new SongResponse("Invalid User");
             
             // Valid Content
 
-            var existingSongWithName = await _songRepository.FindByNameAsync(song.Name);
+            var existingSongWithTitle = await _songRepository.FindByTitleAsync(song.Title);
 
-            if (existingSongWithName != null && existingSongWithName.Id != existingSong.Id)
-                return new SongResponse("Song Name already exists.");
+            if (existingSongWithTitle != null && existingSongWithTitle.Id != existingSong.Id)
+                return new SongResponse("Song Title already exists.");
 
-            existingSong.Name = song.Name;
-            existingSong.Gender = song.Gender;
+            existingSong.Title = song.Title;
             existingSong.Description = song.Description;
-            existingSong.SongListId = song.SongListId;
+            existingSong.UrlToImage = song.UrlToImage;
+            existingSong.UserId = song.UserId;
 
             try
             {

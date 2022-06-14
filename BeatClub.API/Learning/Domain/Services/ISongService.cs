@@ -8,7 +8,7 @@ namespace BeatClub.API.Learning.Domain.Services
     public interface ISongService
     {
         Task<IEnumerable<Song>> ListAsync();
-        Task<IEnumerable<Song>> ListBySongListIdAsync(int songListId);
+        Task<IEnumerable<Song>> ListByUserIdAsync(int userId);
         Task<SongResponse> SaveAsync(Song song);
         Task<SongResponse> UpdateAsync(int songId, Song song);
         Task<SongResponse> DeleteAsync(int songId);

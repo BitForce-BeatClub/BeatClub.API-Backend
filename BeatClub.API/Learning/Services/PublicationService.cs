@@ -26,7 +26,7 @@ namespace BeatClub.API.Learning.Services
             return await _publicationRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Publication>> ListByCategoryIdAsync(int publicationId)
+        public async Task<IEnumerable<Publication>> ListByUserIdAsync(int publicationId)
         {
             return await _publicationRepository.FindByUserIdAsync(publicationId);
         }
@@ -42,10 +42,10 @@ namespace BeatClub.API.Learning.Services
             
             // Valid Content
 
-            var existingPublicationWithName = await _publicationRepository.FindByNameAsync(publication.Name);
+            var existingPublicationWithName = await _publicationRepository.FindByTitleAsync(publication.Title);
 
             if (existingPublicationWithName != null)
-                return new PublicationResponse("Publication Name already exists.");
+                return new PublicationResponse("Publication Title already exists.");
 
             try
             {
@@ -79,12 +79,12 @@ namespace BeatClub.API.Learning.Services
             
             // Valid Name
 
-            var existingPublicationWithName = await _publicationRepository.FindByNameAsync(publication.Name);
+            var existingPublicationWithTitle = await _publicationRepository.FindByTitleAsync(publication.Title);
 
-            if (existingPublicationWithName != null && existingPublicationWithName.Id != existingPublication.Id)
-                return new PublicationResponse("Publication Name already exists.");
+            if (existingPublicationWithTitle != null && existingPublicationWithTitle.Id != existingPublication.Id)
+                return new PublicationResponse("Publication Title already exists.");
 
-            existingPublication.Name = publication.Name;
+            existingPublication.Title = publication.Title;
             existingPublication.Description = publication.Description;
             //existingMessage.CreatAt = message.CreatAt;
             existingPublication.UserId = publication.UserId;

@@ -6,7 +6,7 @@ namespace BeatClub.API.Learning.Resources
     {
         [Required]
         [MaxLength(50)]
-        public string Name { get; set; }
+        public string Title { get; set; }
         [Required]
         [MaxLength(120)]
         public string Description { get; set; }
