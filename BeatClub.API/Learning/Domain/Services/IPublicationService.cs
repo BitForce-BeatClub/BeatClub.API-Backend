@@ -8,7 +8,7 @@ namespace BeatClub.API.Learning.Domain.Services
     public interface IPublicationService
     {
         Task<IEnumerable<Publication>> ListAsync();
-        Task<IEnumerable<Publication>> ListByUserIdAsync(int publicationId);
+        Task<IEnumerable<Publication>> ListByUserIdAsync(int userId);
         Task<PublicationResponse> SaveAsync(Publication publication);
         Task<PublicationResponse> UpdateAsync(int publicationId, Publication publication);
         Task<PublicationResponse> DeleteAsync(int publicationId);

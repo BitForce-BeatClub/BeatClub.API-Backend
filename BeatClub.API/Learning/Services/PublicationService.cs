@@ -26,9 +26,9 @@ namespace BeatClub.API.Learning.Services
             return await _publicationRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Publication>> ListByUserIdAsync(int publicationId)
+        public async Task<IEnumerable<Publication>> ListByUserIdAsync(int userId)
         {
-            return await _publicationRepository.FindByUserIdAsync(publicationId);
+            return await _publicationRepository.FindByUserIdAsync(userId);
         }
 
         public async Task<PublicationResponse> SaveAsync(Publication publication)

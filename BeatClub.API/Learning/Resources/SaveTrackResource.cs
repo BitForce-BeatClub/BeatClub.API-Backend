@@ -3,19 +3,26 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BeatClub.API.Learning.Resources
 {
-    public class SaveSongResource
+    public class SaveTrackResource
     {
         
         [Required]
         [MaxLength(50)]
         public string Title { get; set; }
         [Required]
-        [MaxLength(200)]
-        public string UrlToImage { get; set; }
+        [MaxLength(50)]
+        public string Privacy { get; set; }
         [Required]
-        [MaxLength(120)]
-        public string Description { get; set; }
+        [MaxLength(50)]
+        public string Artist { get; set; }
+        [Required]
+        [MaxLength(200)]
+        public string Cover { get; set; }
+        [Required]
+        [MaxLength(200)]
+        public string Source { get; set; }
         [Required]
         public int UserId { get; set; }
+        
     }
 }

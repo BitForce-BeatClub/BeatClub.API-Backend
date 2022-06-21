@@ -7,6 +7,6 @@ namespace BeatClub.API.Learning.Resources
         public int Id { get; set; }
         public string Content { get; set; }
         //public DateTime CreatAt { get; set; }
-        public UserResource User { get; set; }
+        public int UserId { get; set; }
     }
 }

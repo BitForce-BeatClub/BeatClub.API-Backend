@@ -2,15 +2,19 @@
 
 namespace BeatClub.API.Learning.Domain.Models
 {
-    public class Song
+    public class Track
     {
         public int Id { get; set; }
         
         public string Title { get; set; }
         
-        public string Description { get; set; }
+        public string Privacy { get; set; }
         
-        public string UrlToImage { get; set; }
+        public string Artist { get; set; }
+        
+        public string Cover { get; set; }
+        
+        public string Source { get; set; }
         
         //public DateTime CreateAt { get; set; }
         

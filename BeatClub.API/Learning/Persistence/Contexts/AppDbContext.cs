@@ -14,7 +14,7 @@ namespace BeatClub.API.Learning.Persistence.Contexts
 
         public DbSet<User> Users { get; set; }
         public DbSet<Message> Messages { get; set; }
-        public DbSet<Song> Songs { get; set; }
+        public DbSet<Track> Tracks { get; set; }
         public DbSet<Publication> Publications { get; set; }
         public DbSet<Membership> Memberships { get; set; }
 
@@ -43,13 +43,15 @@ namespace BeatClub.API.Learning.Persistence.Contexts
             builder.Entity<Message>().Property(p => p.Content).IsRequired().HasMaxLength(120);
             //builder.Entity<Message>().Property(p => p.CreatAt).IsRequired();
             
-            //Song
-            builder.Entity<Song>().ToTable("Songs");
-            builder.Entity<Song>().HasKey(p => p.Id);
-            builder.Entity<Song>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Song>().Property(p => p.Title).IsRequired().HasMaxLength(50);
-            builder.Entity<Song>().Property(p => p.Description).IsRequired().HasMaxLength(120);
-            builder.Entity<Song>().Property(p => p.UrlToImage).IsRequired().HasMaxLength(200);
+            //Track
+            builder.Entity<Track>().ToTable("Tracks");
+            builder.Entity<Track>().HasKey(p => p.Id);
+            builder.Entity<Track>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Track>().Property(p => p.Title).IsRequired().HasMaxLength(50);
+            builder.Entity<Track>().Property(p => p.Privacy).IsRequired().HasMaxLength(50);
+            builder.Entity<Track>().Property(p => p.Artist).IsRequired().HasMaxLength(50);
+            builder.Entity<Track>().Property(p => p.Cover).IsRequired().HasMaxLength(200);
+            builder.Entity<Track>().Property(p => p.Source).IsRequired().HasMaxLength(200);
             //builder.Entity<Song>().Property(p => p.CreateAt).IsRequired();
 
             //Publication
