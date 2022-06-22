@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj": {}
+    "C:\\Users\\epost\\RiderProjects\\BeatClub.API-Backend-testing\\BeatClub.API\\BeatClub.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj": {
+    "C:\\Users\\epost\\RiderProjects\\BeatClub.API-Backend-testing\\BeatClub.API\\BeatClub.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj",
+        "projectUniqueName": "C:\\Users\\epost\\RiderProjects\\BeatClub.API-Backend-testing\\BeatClub.API\\BeatClub.API.csproj",
         "projectName": "BeatClub.API",
-        "projectPath": "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj",
-        "packagesPath": "C:\\Users\\Josmar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API\\obj\\",
+        "projectPath": "C:\\Users\\epost\\RiderProjects\\BeatClub.API-Backend-testing\\BeatClub.API\\BeatClub.API.csproj",
+        "packagesPath": "C:\\Users\\epost\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\epost\\RiderProjects\\BeatClub.API-Backend-testing\\BeatClub.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Josmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\epost\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
