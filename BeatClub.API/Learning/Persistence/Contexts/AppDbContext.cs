@@ -18,6 +18,7 @@ namespace BeatClub.API.Learning.Persistence.Contexts
         public DbSet<Publication> Publications { get; set; }
         public DbSet<Membership> Memberships { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<Payment> Payments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -35,6 +36,15 @@ namespace BeatClub.API.Learning.Persistence.Contexts
             builder.Entity<User>().Property(p => p.Trend).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.Result).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.MembershipId).IsRequired();
+            
+            //Payments
+            builder.Entity<Payment>().ToTable("Payments");
+            builder.Entity<Payment>().HasKey(p => p.Id);
+            builder.Entity<Payment>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Payment>().Property(p => p.Description).IsRequired().HasMaxLength(120);
+            builder.Entity<Payment>().Property(p => p.Amount).IsRequired();
+            builder.Entity<Payment>().Property(p => p.PayMethod).IsRequired().HasMaxLength(50);
+            builder.Entity<Payment>().Property(p => p.UserId).IsRequired();
 
             //Messages
             builder.Entity<Message>().ToTable("Messages");

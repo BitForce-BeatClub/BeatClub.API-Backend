@@ -14,6 +14,7 @@ namespace BeatClub.API.Learning.Mapping
             CreateMap<Publication, PublicationResource>();
             CreateMap<Membership, MembershipResource>();
             CreateMap<Review,ReviewResource>();
+            CreateMap<Payment,PaymentResource>();
         }
     }
 }

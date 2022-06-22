@@ -1,6 +1,8 @@
-﻿namespace BeatClub.API.Learning.Domain.Models
+﻿using BeatClub.API.Learning.Domain.Models;
+
+namespace BeatClub.API.Learning.Resources
 {
-    public class Payment
+    public class PaymentResource
     {
         public int Id { get; set; }
         
@@ -9,9 +11,10 @@
         public string PayMethod { get; set; }
         
         public int Amount { get; set; }
+        
         //public DateTime CreateAt { get; set; }
         
         public int UserId { get; set; }
-        public User User { get; set; }
+       
     }
 }

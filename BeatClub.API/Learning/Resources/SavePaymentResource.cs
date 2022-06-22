@@ -1,17 +1,23 @@
-﻿namespace BeatClub.API.Learning.Domain.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BeatClub.API.Learning.Resources
 {
-    public class Payment
+    public class SavePaymentResource
     {
-        public int Id { get; set; }
-        
+        [Required]
+        [MaxLength(120)]
         public string Description { get; set; }
         
+        [Required]
+        [MaxLength(50)]
         public string PayMethod { get; set; }
         
+        [Required]
         public int Amount { get; set; }
+        
         //public DateTime CreateAt { get; set; }
         
+        [Required]
         public int UserId { get; set; }
-        public User User { get; set; }
     }
 }
