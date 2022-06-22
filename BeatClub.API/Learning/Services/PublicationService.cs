@@ -79,11 +79,6 @@ namespace BeatClub.API.Learning.Services
             
             // Valid Name
 
-            var existingPublicationWithTitle = await _publicationRepository.FindByTitleAsync(publication.Title);
-
-            if (existingPublicationWithTitle != null && existingPublicationWithTitle.Id != existingPublication.Id)
-                return new PublicationResponse("Publication Title already exists.");
-
             existingPublication.Title = publication.Title;
             existingPublication.Description = publication.Description;
             //existingMessage.CreatAt = message.CreatAt;

@@ -13,6 +13,7 @@ namespace BeatClub.API.Learning.Mapping
             CreateMap<Track, TrackResource>();
             CreateMap<Publication, PublicationResource>();
             CreateMap<Membership, MembershipResource>();
+            CreateMap<Review,ReviewResource>();
         }
     }
 }
