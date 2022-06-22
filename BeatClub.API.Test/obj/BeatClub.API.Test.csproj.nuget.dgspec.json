@@ -40,7 +40,7 @@
           "dependencies": {
             "FluentAssertions": {
               "target": "Package",
-              "version": "[6.2.0, )"
+              "version": "[6.7.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -52,7 +52,7 @@
             },
             "SpecFlow.xUnit": {
               "target": "Package",
-              "version": "[3.9.22, )"
+              "version": "[3.9.74, )"
             },
             "xunit": {
               "target": "Package",
