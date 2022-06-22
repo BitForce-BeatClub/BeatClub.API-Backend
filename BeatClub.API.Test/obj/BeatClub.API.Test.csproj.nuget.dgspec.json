@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj": {}
+    "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API.Test\\BeatClub.API.Test.csproj": {}
   },
   "projects": {
-    "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj": {
+    "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API.Test\\BeatClub.API.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj",
-        "projectName": "BeatClub.API",
-        "projectPath": "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API\\BeatClub.API.csproj",
+        "projectUniqueName": "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API.Test\\BeatClub.API.Test.csproj",
+        "projectName": "BeatClub.API.Test",
+        "projectPath": "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API.Test\\BeatClub.API.Test.csproj",
         "packagesPath": "C:\\Users\\mathy\\.nuget\\packages\\",
-        "outputPath": "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API\\obj\\",
+        "outputPath": "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mathy\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,33 +38,31 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "AutoMapper": {
+            "FluentAssertions": {
               "target": "Package",
-              "version": "[11.0.1, )"
+              "version": "[6.2.0, )"
             },
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[11.0.0, )"
+              "version": "[17.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore": {
+            "SpecFlow.Plus.LivingDocPlugin": {
               "target": "Package",
-              "version": "[6.0.5, )"
+              "version": "[3.9.57, )"
             },
-            "Microsoft.EntityFrameworkCore.Relational": {
+            "SpecFlow.xUnit": {
               "target": "Package",
-              "version": "[6.0.5, )"
+              "version": "[3.9.22, )"
             },
-            "Microsoft.EntityFrameworkCore.Relational.Design": {
+            "xunit": {
               "target": "Package",
-              "version": "[1.1.6, )"
+              "version": "[2.4.1, )"
             },
-            "MySql.EntityFrameworkCore": {
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.1, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.3.1, )"
+              "version": "[2.4.3, )"
             }
           },
           "imports": [
@@ -78,9 +76,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
