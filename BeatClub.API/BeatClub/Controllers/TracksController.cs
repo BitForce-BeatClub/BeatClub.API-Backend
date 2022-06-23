@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net.Mime;
 using System.Threading.Tasks;
 using AutoMapper;
 using BeatClub.API.BeatClub.Domain.Models;
@@ -6,11 +7,14 @@ using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Resources;
 using BeatClub.API.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace BeatClub.API.BeatClub.Controllers
 {
     [ApiController]
     [Route("/api/v1/[controller]")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [SwaggerTag("Create, read, update and delete Tracks")]
     public class TracksController:ControllerBase
     {
         private readonly IMapper _mapper;
@@ -23,6 +27,7 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<TrackResource>),200)]
         public async Task<IEnumerable<TrackResource>> GetAllAsync()
         {
             var tracks = await _trackService.ListAsync();
@@ -32,6 +37,9 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(typeof(TrackResource),201)]
+        [ProducesResponseType(typeof(List<string>),400)]
+        [ProducesResponseType(500)]
         public async Task<IActionResult> PostAsync([FromBody] SaveTrackResource resource)
         {
             if (!ModelState.IsValid)
@@ -46,7 +54,7 @@ namespace BeatClub.API.BeatClub.Controllers
 
             var trackResource = _mapper.Map<Track, TrackResource>(result.Resource);
 
-            return Ok(trackResource);
+            return Created(nameof(PostAsync),trackResource);
             
         }
         

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net.Mime;
 using System.Threading.Tasks;
 using AutoMapper;
 using BeatClub.API.BeatClub.Domain.Models;
@@ -6,11 +7,14 @@ using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Resources;
 using BeatClub.API.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace BeatClub.API.BeatClub.Controllers
 {
     [ApiController]
     [Route("/api/v1/[controller]")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [SwaggerTag("Create, read, update and delete Messages")]
     public class MessagesController : ControllerBase
     {
         private readonly IMessageService _messageService;
@@ -23,6 +27,7 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<MessageResource>),200)]
         public async Task<IEnumerable<MessageResource>> GetAllAsync()
         {
             var messages = await _messageService.ListAsync();
@@ -32,6 +37,9 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(typeof(MessageResource),201)]
+        [ProducesResponseType(typeof(List<string>),400)]
+        [ProducesResponseType(500)]
         public async Task<IActionResult> PostAsync([FromBody] SaveMessageResource resource)
         {
             if (!ModelState.IsValid)
@@ -46,7 +54,7 @@ namespace BeatClub.API.BeatClub.Controllers
 
             var messageResource = _mapper.Map<Message, MessageResource>(result.Resource);
 
-            return Ok(messageResource);
+            return Created(nameof(PostAsync),messageResource);
         }
 
         [HttpPut("{id}")]

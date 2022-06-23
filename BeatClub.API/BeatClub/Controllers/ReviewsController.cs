@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net.Mime;
 using System.Threading.Tasks;
 using AutoMapper;
 using BeatClub.API.BeatClub.Domain.Models;
@@ -6,11 +7,14 @@ using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Resources;
 using BeatClub.API.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace BeatClub.API.BeatClub.Controllers
 {
     [ApiController]
     [Route("/api/v1/[controller]")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [SwaggerTag("Create, read, update and delete Reviews")]
     public class ReviewsController:ControllerBase
     {
         private readonly IReviewService _reviewService;
@@ -24,6 +28,7 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<ReviewResource>),200)]
         public async Task<IEnumerable<ReviewResource>> GetAllAsync()
         {
             var reviews = await _reviewService.ListAsync();
@@ -33,6 +38,9 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(typeof(ReviewResource),201)]
+        [ProducesResponseType(typeof(List<string>),400)]
+        [ProducesResponseType(500)]
         public async Task<IActionResult> PostAsync([FromBody] SaveReviewResource resource)
         {
             if (!ModelState.IsValid)
@@ -47,7 +55,7 @@ namespace BeatClub.API.BeatClub.Controllers
 
             var reviewResource = _mapper.Map<Review, ReviewResource>(result.Resource);
 
-            return Ok(reviewResource);
+            return Created(nameof(PostAsync),reviewResource);
             
         }
         

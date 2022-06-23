@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,32 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+    {
+        // Add API Documentation Information
+        options.SwaggerDoc("v1",new OpenApiInfo
+        {
+            Version = "v1",
+            Title = "BeatClub API",
+            Description = "BeatClub RESTful API",
+            TermsOfService = new Uri("https://beatclub.com/tos"),
+            Contact = new OpenApiContact
+            {
+                Name = "BitForce",
+                Url = new Uri("https://bitforce")
+            },
+            License = new OpenApiLicense
+            {
+                Name = "BeatClub Resources License",
+                Url = new Uri("https://beatclub.com/license")
+            }
+        });
+        
+        options.EnableAnnotations();
+        
+    }
+    
+    );
 
 // Add Database Connection
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -76,7 +102,11 @@ using (var context = scope.ServiceProvider.GetService<AppDbContext>())
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("v1/swagger.json","v1");
+        options.RoutePrefix = "swagger";
+    });
 }
 
 app.UseHttpsRedirection();

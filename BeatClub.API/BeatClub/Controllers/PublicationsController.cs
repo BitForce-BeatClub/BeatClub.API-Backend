@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net.Mime;
 using System.Threading.Tasks;
 using AutoMapper;
 using BeatClub.API.BeatClub.Domain.Models;
@@ -6,11 +7,14 @@ using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Resources;
 using BeatClub.API.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace BeatClub.API.BeatClub.Controllers
 {
     [ApiController]
     [Route("/api/v1/[controller]")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [SwaggerTag("Create, read, update and delete Publications")]
     public class PublicationsController: ControllerBase
     {
         private readonly IPublicationService _publicationService;
@@ -23,6 +27,7 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<PublicationResource>),200)]
         public async Task<IEnumerable<PublicationResource>> GetAllAsync()
         {
             var publications = await _publicationService.ListAsync();
@@ -32,6 +37,9 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(typeof(PublicationResource),201)]
+        [ProducesResponseType(typeof(List<string>),400)]
+        [ProducesResponseType(500)]
         public async Task<IActionResult> PostAsync([FromBody] SavePublicationResource resource)
         {
             if (!ModelState.IsValid)
@@ -46,7 +54,7 @@ namespace BeatClub.API.BeatClub.Controllers
 
             var publicationResource = _mapper.Map<Publication, PublicationResource>(result.Resource);
 
-            return Ok(publicationResource);
+            return Created(nameof(PostAsync),publicationResource);
             
         }
         

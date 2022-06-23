@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net.Mime;
 using System.Threading.Tasks;
 using AutoMapper;
 using BeatClub.API.BeatClub.Domain.Models;
@@ -6,11 +7,14 @@ using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Resources;
 using BeatClub.API.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace BeatClub.API.BeatClub.Controllers
 {
     [ApiController]
     [Route("/api/v1/[controller]")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [SwaggerTag("Create, read, update and delete Payments")]
     public class PaymentsController: ControllerBase
     {
         private readonly IPaymentService _paymentService;
@@ -23,6 +27,7 @@ namespace BeatClub.API.BeatClub.Controllers
         }
         
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<PaymentResource>),200)]
         public async Task<IEnumerable<PaymentResource>> GetAllAsync()
         {
             var payments = await _paymentService.ListAsync();
@@ -32,6 +37,9 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(typeof(PaymentResource),201)]
+        [ProducesResponseType(typeof(List<string>),400)]
+        [ProducesResponseType(500)]
         public async Task<IActionResult> PostAsync([FromBody] SavePaymentResource resource)
         {
             if (!ModelState.IsValid)
@@ -46,7 +54,7 @@ namespace BeatClub.API.BeatClub.Controllers
 
             var paymentResource = _mapper.Map<Payment, PaymentResource>(result.Resource);
 
-            return Ok(paymentResource);
+            return Created(nameof(PostAsync),paymentResource);
             
         }
         

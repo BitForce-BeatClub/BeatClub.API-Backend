@@ -106,3 +106,4 @@ C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\obj\Debug\net
 C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\obj\Debug\net6.0\BeatClub.API.pdb
 C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\obj\Debug\net6.0\BeatClub.API.genruntimeconfig.cache
 C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\obj\Debug\net6.0\refint\BeatClub.API.dll
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll

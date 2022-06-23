@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net.Mime;
 using System.Threading.Tasks;
 using AutoMapper;
 using BeatClub.API.BeatClub.Domain.Models;
@@ -6,10 +7,14 @@ using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Resources;
 using BeatClub.API.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace BeatClub.API.BeatClub.Controllers
 {
+    [ApiController]
     [Route("/api/v1/[controller]")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [SwaggerTag("Create, read, update and delete Users")]
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -22,6 +27,7 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<UserResource>),200)]
         public async Task<IEnumerable<UserResource>> GetAllSync()
         {
             var users = await _userService.ListAsync();
@@ -31,6 +37,9 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(typeof(UserResource),201)]
+        [ProducesResponseType(typeof(List<string>),400)]
+        [ProducesResponseType(500)]
         public async Task<IActionResult> PostAsync([FromBody] SaveUserResource resource)
         {
             if (!ModelState.IsValid)
@@ -45,7 +54,7 @@ namespace BeatClub.API.BeatClub.Controllers
 
             var userResource = _mapper.Map<User, UserResource>(result.Resource);
 
-            return Ok(userResource);
+            return Created(nameof(PostAsync),userResource);
         }
 
         [HttpPut("{id}")]

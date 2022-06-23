@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net.Mime;
 using System.Threading.Tasks;
 using AutoMapper;
 using BeatClub.API.BeatClub.Domain.Models;
@@ -6,10 +7,14 @@ using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Resources;
 using BeatClub.API.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace BeatClub.API.BeatClub.Controllers
 {
+    [ApiController]
     [Route("/api/v1/[controller]")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [SwaggerTag("Create, read, update and delete Memberships")]
     public class MembershipsController : ControllerBase
     {
         private readonly IMembershipService _membershipService;
@@ -22,6 +27,7 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<MembershipResource>),200)]
         public async Task<IEnumerable<MembershipResource>> GetAllSync()
         {
             var memberships = await _membershipService.ListAsync();
@@ -31,6 +37,9 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(typeof(MembershipResource),201)]
+        [ProducesResponseType(typeof(List<string>),400)]
+        [ProducesResponseType(500)]
         public async Task<IActionResult> PostAsync([FromBody] SaveMembershipResource resource)
         {
             if (!ModelState.IsValid)
@@ -45,7 +54,7 @@ namespace BeatClub.API.BeatClub.Controllers
 
             var membershipResource = _mapper.Map<Membership, MembershipResource>(result.Resource);
 
-            return Ok(membershipResource);
+            return Created(nameof(PostAsync),membershipResource);
         }
 
         [HttpPut("{id}")]
