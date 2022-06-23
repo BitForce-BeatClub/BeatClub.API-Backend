@@ -92,7 +92,8 @@ namespace BeatClub.API.BeatClub.Services
             existingReview.Description = review.Description;
             existingReview.UserArtistId = review.UserArtistId;
             existingReview.UserProducerId = review.UserProducerId;
-
+            existingReview.CreateAt = review.CreateAt;
+            
             try
             {
                 _reviewRepository.Update(existingReview);

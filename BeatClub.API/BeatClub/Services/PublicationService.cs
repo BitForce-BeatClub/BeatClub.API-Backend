@@ -81,7 +81,7 @@ namespace BeatClub.API.BeatClub.Services
 
             existingPublication.Title = publication.Title;
             existingPublication.Description = publication.Description;
-            //existingMessage.CreatAt = message.CreatAt;
+            existingPublication.CreateAt = publication.CreateAt;
             existingPublication.UserId = publication.UserId;
 
             try

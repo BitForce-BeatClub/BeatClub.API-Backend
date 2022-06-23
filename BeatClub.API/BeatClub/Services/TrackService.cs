@@ -91,6 +91,7 @@ namespace BeatClub.API.BeatClub.Services
             existingtrack.Cover = track.Cover;
             existingtrack.Source = track.Source;
             existingtrack.UserId = track.UserId;
+            existingtrack.CreateAt = track.CreateAt;
 
             try
             {

@@ -1,4 +1,6 @@
-﻿namespace BeatClub.API.BeatClub.Domain.Models
+﻿using System;
+
+namespace BeatClub.API.BeatClub.Domain.Models
 {
     public class Publication
     {
@@ -8,8 +10,9 @@
         
         public string Description { get; set; }
         
-        //public DateTime CreateAt { get; set; }
+        public DateTime CreateAt { get; set; }
         
+        //Relationships
         public int UserId { get; set; }
         public User User { get; set; }
 

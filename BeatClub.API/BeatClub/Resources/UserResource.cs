@@ -1,4 +1,6 @@
-﻿namespace BeatClub.API.BeatClub.Resources
+﻿using System;
+
+namespace BeatClub.API.BeatClub.Resources
 {
     public class UserResource
     {
@@ -11,5 +13,6 @@
         public string Trend { get; set; }
         public string Result { get; set; }
         public int MembershipId { get; set; }
+        public DateTime CreateAt { get; set; }
     }
 }

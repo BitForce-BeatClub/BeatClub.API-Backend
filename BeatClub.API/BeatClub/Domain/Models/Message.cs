@@ -8,7 +8,7 @@ namespace BeatClub.API.BeatClub.Domain.Models
         
         public string Content { get; set; }
         
-        //public DateTime CreatAt { get; set; }
+        public DateTime CreateAt { get; set; }
         
         //Relationships
         public int UserProducerId { get; set; }

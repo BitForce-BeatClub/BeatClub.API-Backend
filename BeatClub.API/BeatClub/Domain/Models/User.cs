@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace BeatClub.API.BeatClub.Domain.Models
 {
@@ -18,6 +19,9 @@ namespace BeatClub.API.BeatClub.Domain.Models
         
         public string Result { get; set; }
         
+        public DateTime CreateAt { get; set; }
+        
+        //Relationships
         public int MembershipId { get; set; }
         public Membership Membership { get; set; }
         

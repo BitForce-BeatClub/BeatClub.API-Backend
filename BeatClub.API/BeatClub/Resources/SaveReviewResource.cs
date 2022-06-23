@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace BeatClub.API.BeatClub.Resources
 {
@@ -16,6 +17,9 @@ namespace BeatClub.API.BeatClub.Resources
         
         [Required]
         public int UserArtistId { get; set; }
+        
+        [Required]
+        public DateTime CreateAt { get; set; }
         
     }
 }

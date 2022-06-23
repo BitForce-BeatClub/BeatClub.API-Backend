@@ -23,6 +23,8 @@ namespace BeatClub.API.BeatClub.Resources
         public string Source { get; set; }
         [Required]
         public int UserId { get; set; }
+        [Required]
+        public DateTime CreateAt { get; set; }
         
     }
 }

@@ -1,4 +1,5 @@
-﻿using BeatClub.API.BeatClub.Domain.Models;
+﻿using System;
+using BeatClub.API.BeatClub.Domain.Models;
 
 namespace BeatClub.API.BeatClub.Resources
 {
@@ -10,7 +11,7 @@ namespace BeatClub.API.BeatClub.Resources
         
         public int Qualification { get; set; }
         
-        //public DateTime CreateAt { get; set; }
+        public DateTime CreateAt { get; set; }
         
         public int UserProducerId { get; set; }
        

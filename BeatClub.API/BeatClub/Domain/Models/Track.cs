@@ -16,8 +16,9 @@ namespace BeatClub.API.BeatClub.Domain.Models
         
         public string Source { get; set; }
         
-        //public DateTime CreateAt { get; set; }
+        public DateTime CreateAt { get; set; }
         
+        //Relationships
         public int UserId { get; set; }
         public User User { get; set; }
     }

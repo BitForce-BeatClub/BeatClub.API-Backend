@@ -1,4 +1,6 @@
-﻿namespace BeatClub.API.BeatClub.Domain.Models
+﻿using System;
+
+namespace BeatClub.API.BeatClub.Domain.Models
 {
     public class Review
     {
@@ -8,7 +10,7 @@
         
         public int Qualification { get; set; }
         
-       //public DateTime CreateAt { get; set; }
+        public DateTime CreateAt { get; set; }
         
         public int UserProducerId { get; set; }
         public User UserProducer { get; set; }

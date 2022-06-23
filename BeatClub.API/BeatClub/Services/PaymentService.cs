@@ -77,7 +77,8 @@ namespace BeatClub.API.BeatClub.Services
             //existingMessage.CreatAt = message.CreatAt;
             existingPayment.PayMethod = payment.PayMethod;
             existingPayment.UserId = payment.UserId;
-
+            existingPayment.CreateAt = payment.CreateAt;
+            
             try
             {
                 _paymentRepository.Update(existingPayment);

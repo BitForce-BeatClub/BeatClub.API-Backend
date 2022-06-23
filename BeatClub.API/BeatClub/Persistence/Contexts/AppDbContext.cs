@@ -36,6 +36,7 @@ namespace BeatClub.API.BeatClub.Persistence.Contexts
             builder.Entity<User>().Property(p => p.Trend).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.Result).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.MembershipId).IsRequired();
+            builder.Entity<User>().Property(p => p.CreateAt).IsRequired();
             
             //Payments
             builder.Entity<Payment>().ToTable("Payments");
@@ -45,6 +46,7 @@ namespace BeatClub.API.BeatClub.Persistence.Contexts
             builder.Entity<Payment>().Property(p => p.Amount).IsRequired();
             builder.Entity<Payment>().Property(p => p.PayMethod).IsRequired().HasMaxLength(50);
             builder.Entity<Payment>().Property(p => p.UserId).IsRequired();
+            builder.Entity<Payment>().Property(p => p.CreateAt).IsRequired();
 
             //Messages
             builder.Entity<Message>().ToTable("Messages");
@@ -53,7 +55,7 @@ namespace BeatClub.API.BeatClub.Persistence.Contexts
             builder.Entity<Message>().Property(p => p.Content).IsRequired().HasMaxLength(120);
             builder.Entity<Message>().Property(p => p.UserArtistId).IsRequired();
             builder.Entity<Message>().Property(p => p.UserProducerId).IsRequired();
-            //builder.Entity<Message>().Property(p => p.CreatAt).IsRequired();
+            builder.Entity<Message>().Property(p => p.CreateAt).IsRequired();
             
             //Track
             builder.Entity<Track>().ToTable("Tracks");
@@ -64,7 +66,7 @@ namespace BeatClub.API.BeatClub.Persistence.Contexts
             builder.Entity<Track>().Property(p => p.Artist).IsRequired().HasMaxLength(50);
             builder.Entity<Track>().Property(p => p.Cover).IsRequired().HasMaxLength(200);
             builder.Entity<Track>().Property(p => p.Source).IsRequired().HasMaxLength(200);
-            //builder.Entity<Song>().Property(p => p.CreateAt).IsRequired();
+            builder.Entity<Track>().Property(p => p.CreateAt).IsRequired();
 
             //Publication
             builder.Entity<Publication>().ToTable("Publications");
@@ -72,6 +74,7 @@ namespace BeatClub.API.BeatClub.Persistence.Contexts
             builder.Entity<Publication>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Publication>().Property(p => p.Title).IsRequired().HasMaxLength(50);
             builder.Entity<Publication>().Property(p => p.Description).IsRequired().HasMaxLength(120);
+            builder.Entity<Publication>().Property(p => p.CreateAt).IsRequired();
            
             //Membership
             builder.Entity<Membership>().ToTable("Memberships");
@@ -91,6 +94,7 @@ namespace BeatClub.API.BeatClub.Persistence.Contexts
             builder.Entity<Review>().Property(p => p.Qualification).IsRequired();
             builder.Entity<Review>().Property(p => p.UserArtistId).IsRequired();
             builder.Entity<Review>().Property(p => p.UserProducerId).IsRequired();
+            builder.Entity<Review>().Property(p => p.CreateAt).IsRequired();
             
             // Apply Snake Case Naming Conventions
             

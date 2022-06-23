@@ -107,6 +107,7 @@ namespace BeatClub.API.BeatClub.Services
             //existingMessage.CreatAt = message.CreatAt;
             existingMessage.UserArtistId = message.UserArtistId;
             existingMessage.UserProducerId = message.UserProducerId;
+            existingMessage.CreateAt = message.CreateAt;
 
             try
             {
