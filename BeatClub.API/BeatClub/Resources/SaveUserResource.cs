@@ -1,11 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace BeatClub.API.BeatClub.Resources
 {
+    [SwaggerSchema(Required = new[]{"Nickname"})]
     public class SaveUserResource
     {
-        
+        [SwaggerSchema("User Nickname")]
         [Required]
         [MaxLength(50)]
         public string Nickname { get; set; }

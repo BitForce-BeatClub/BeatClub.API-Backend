@@ -1,10 +1,13 @@
 ﻿using System;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace BeatClub.API.BeatClub.Resources
 {
     public class UserResource
     {
+        [SwaggerSchema("User Identifier")]
         public int Id { get; set; }
+        [SwaggerSchema("User Nickname")]
         public string Nickname { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
