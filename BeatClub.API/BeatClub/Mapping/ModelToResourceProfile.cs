@@ -10,7 +10,7 @@ namespace BeatClub.API.BeatClub.Mapping
     {
         public ModelToResourceProfile()
         {
-            CreateMap<User, UserResource>();
+            //CreateMap<User, UserResource>();
             CreateMap<Message, MessageResource>();
             CreateMap<Track, TrackResource>();
             CreateMap<Publication, PublicationResource>();
