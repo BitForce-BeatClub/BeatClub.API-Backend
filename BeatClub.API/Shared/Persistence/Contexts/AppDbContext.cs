@@ -1,4 +1,5 @@
 ﻿using BeatClub.API.BeatClub.Domain.Models;
+using BeatClub.API.Security.Domain.Models;
 using BeatClub.API.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
 

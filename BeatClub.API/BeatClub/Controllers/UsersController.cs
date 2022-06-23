@@ -5,6 +5,8 @@ using AutoMapper;
 using BeatClub.API.BeatClub.Domain.Models;
 using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Resources;
+using BeatClub.API.Security.Domain.Models;
+using BeatClub.API.Security.Resources;
 using BeatClub.API.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;

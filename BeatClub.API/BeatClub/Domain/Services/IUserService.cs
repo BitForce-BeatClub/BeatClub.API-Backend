@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using BeatClub.API.BeatClub.Domain.Models;
 using BeatClub.API.BeatClub.Domain.Services.Communication;
+using BeatClub.API.Security.Domain.Models;
 
 namespace BeatClub.API.BeatClub.Domain.Services
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace BeatClub.API.BeatClub.Resources
+namespace BeatClub.API.Security.Resources
 {
     public class UserResource
     {

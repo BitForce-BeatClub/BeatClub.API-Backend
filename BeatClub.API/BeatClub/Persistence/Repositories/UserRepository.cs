@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using BeatClub.API.BeatClub.Domain.Models;
 using BeatClub.API.BeatClub.Domain.Repositories;
+using BeatClub.API.Security.Domain.Models;
 using BeatClub.API.Shared.Persistence.Contexts;
 using BeatClub.API.Shared.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using BeatClub.API.BeatClub.Domain.Models;
+using BeatClub.API.Security.Domain.Models;
 
 namespace BeatClub.API.BeatClub.Domain.Repositories
 {

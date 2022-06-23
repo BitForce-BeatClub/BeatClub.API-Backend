@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace BeatClub.API.BeatClub.Resources
+namespace BeatClub.API.Security.Resources
 {
     [SwaggerSchema(Required = new[]{"Nickname"})]
     public class SaveUserResource

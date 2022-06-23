@@ -1,4 +1,5 @@
 ﻿using System;
+using BeatClub.API.Security.Domain.Models;
 
 namespace BeatClub.API.BeatClub.Domain.Models
 {

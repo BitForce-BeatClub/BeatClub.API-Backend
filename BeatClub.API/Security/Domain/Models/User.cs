@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Text.Json.Serialization;
+using BeatClub.API.BeatClub.Domain.Models;
 
-namespace BeatClub.API.BeatClub.Domain.Models
+namespace BeatClub.API.Security.Domain.Models
 {
     public class User
     {
@@ -24,6 +25,10 @@ namespace BeatClub.API.BeatClub.Domain.Models
         //Relationships
         public int MembershipId { get; set; }
         public Membership Membership { get; set; }
+        
+        [JsonIgnore]
+        public string PasswordHash { get; set; }
+        
         
     }
 }
