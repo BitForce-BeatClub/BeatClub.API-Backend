@@ -4,6 +4,8 @@ using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Mapping;
 using BeatClub.API.BeatClub.Persistence.Repositories;
 using BeatClub.API.BeatClub.Services;
+using BeatClub.API.Security.Domain.Repositories;
+using BeatClub.API.Security.Domain.Services;
 using BeatClub.API.Shared.Domain.Repositories;
 using BeatClub.API.Shared.Persistence.Contexts;
 using BeatClub.API.Shared.Persistence.Repositories;
