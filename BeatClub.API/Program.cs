@@ -1,10 +1,10 @@
 using System;
-using BeatClub.API.Learning.Domain.Repositories;
-using BeatClub.API.Learning.Domain.Services;
-using BeatClub.API.Learning.Mapping;
-using BeatClub.API.Learning.Persistence.Contexts;
-using BeatClub.API.Learning.Persistence.Repositories;
-using BeatClub.API.Learning.Services;
+using BeatClub.API.BeatClub.Domain.Repositories;
+using BeatClub.API.BeatClub.Domain.Services;
+using BeatClub.API.BeatClub.Mapping;
+using BeatClub.API.BeatClub.Persistence.Contexts;
+using BeatClub.API.BeatClub.Persistence.Repositories;
+using BeatClub.API.BeatClub.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

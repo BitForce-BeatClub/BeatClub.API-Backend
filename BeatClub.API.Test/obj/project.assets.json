@@ -6824,24 +6824,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mathy\\.nuget\\packages\\": {}
+    "C:\\Users\\Josmar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API.Test\\BeatClub.API.Test.csproj",
+      "projectUniqueName": "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API.Test\\BeatClub.API.Test.csproj",
       "projectName": "BeatClub.API.Test",
-      "projectPath": "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API.Test\\BeatClub.API.Test.csproj",
-      "packagesPath": "C:\\Users\\mathy\\.nuget\\packages\\",
-      "outputPath": "D:\\Github Repositorios\\BeatClub.API-Backend\\BeatClub.API.Test\\obj\\",
+      "projectPath": "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API.Test\\BeatClub.API.Test.csproj",
+      "packagesPath": "C:\\Users\\Josmar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mathy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Josmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6902,7 +6904,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\mathy\\.dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
