@@ -18,6 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="BeatClub\Persistence\Contexts" />
       <Folder Include="Shared\Domain\Services" />
     </ItemGroup>
 

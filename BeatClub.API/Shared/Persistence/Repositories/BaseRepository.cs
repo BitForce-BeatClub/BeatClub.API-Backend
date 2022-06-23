@@ -1,6 +1,6 @@
-﻿using BeatClub.API.BeatClub.Persistence.Contexts;
+﻿using BeatClub.API.Shared.Persistence.Contexts;
 
-namespace BeatClub.API.BeatClub.Persistence.Repositories
+namespace BeatClub.API.Shared.Persistence.Repositories
 {
     public class BaseRepository
     {

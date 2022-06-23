@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace BeatClub.API.BeatClub.Domain.Repositories
+namespace BeatClub.API.Shared.Domain.Repositories
 {
     public interface IUnitOfWork
     {

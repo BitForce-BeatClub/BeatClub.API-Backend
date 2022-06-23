@@ -3,7 +3,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using BeatClub.API.BeatClub.Domain.Models;
 using BeatClub.API.BeatClub.Domain.Repositories;
-using BeatClub.API.BeatClub.Persistence.Contexts;
+using BeatClub.API.Shared.Persistence.Contexts;
+using BeatClub.API.Shared.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace BeatClub.API.BeatClub.Persistence.Repositories

@@ -1,10 +1,8 @@
 ﻿using BeatClub.API.BeatClub.Domain.Models;
 using BeatClub.API.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.Extensions.Configuration;
 
-namespace BeatClub.API.BeatClub.Persistence.Contexts
+namespace BeatClub.API.Shared.Persistence.Contexts
 {
     public class AppDbContext : DbContext
     {
