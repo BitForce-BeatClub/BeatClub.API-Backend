@@ -23,7 +23,6 @@
     <ItemGroup>
       <Folder Include="BeatClub\Persistence\Contexts" />
       <Folder Include="Security\Authorization\Attributes" />
-      <Folder Include="Security\Authorization\Handlers" />
       <Folder Include="Security\Authorization\Middleware" />
       <Folder Include="Shared\Domain\Services" />
     </ItemGroup>
