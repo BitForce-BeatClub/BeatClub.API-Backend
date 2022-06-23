@@ -9,7 +9,7 @@ namespace BeatClub.API.Security.Domain.Repositories
         Task<IEnumerable<User>> ListAsync();
         Task AddAsync(User user);
         Task<User> FindByIdAsync(int id);
-        Task<User> FindNickname(string nickname);
+        Task<User> FindNicknameAsync(string nickname);
         bool ExistByNickname(string nickname);
         User FindById(int id);
         void Update(User user);
