@@ -43,6 +43,12 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 builder.Services.AddScoped<IMessageService, MessageService>();
+builder.Services.AddScoped<ITrackRepository, TrackRepository>();
+builder.Services.AddScoped<ITrackService, TrackService>();
+builder.Services.AddScoped<IPublicationRepository, PublicationRepository>();
+builder.Services.AddScoped<IPublicationService, PublicationService>();
+builder.Services.AddScoped<IMembershipRepository, MembershipRepository>();
+builder.Services.AddScoped<IMembershipService, MembershipService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 //AutoMapper Configuration
