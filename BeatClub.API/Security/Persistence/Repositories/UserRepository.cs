@@ -30,7 +30,7 @@ namespace BeatClub.API.Security.Persistence.Repositories
             return await _context.Users.FindAsync(id);
         }
 
-        public async Task<User> FindNicknameAsync(string nickname)
+        public async Task<User> FindByNicknameAsync(string nickname)
         {
             return await _context.Users.SingleOrDefaultAsync(x => x.Nickname == nickname);
         }
