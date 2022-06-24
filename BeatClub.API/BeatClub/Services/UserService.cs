@@ -58,7 +58,7 @@ namespace BeatClub.API.BeatClub.Services
             existingUser.Trend = user.Trend;
             existingUser.Result = user.Result;
             existingUser.CreateAt = user.CreateAt;
-            existingUser.MembershipId = user.MembershipId;
+            //existingUser.MembershipId = user.MembershipId;
 
             try
             {

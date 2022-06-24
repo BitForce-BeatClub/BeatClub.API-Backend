@@ -23,8 +23,8 @@ namespace BeatClub.API.Security.Domain.Models
         public DateTime CreateAt { get; set; }
         
         //Relationships
-        public int MembershipId { get; set; }
-        public Membership Membership { get; set; }
+        /*public int MembershipId { get; set; }
+        public Membership Membership { get; set; }*/
         
         [JsonIgnore]
         public string PasswordHash { get; set; }

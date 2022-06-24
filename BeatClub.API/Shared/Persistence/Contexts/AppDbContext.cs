@@ -34,7 +34,7 @@ namespace BeatClub.API.Shared.Persistence.Contexts
             builder.Entity<User>().Property(p => p.UrlToImage).IsRequired().HasMaxLength(200);
             builder.Entity<User>().Property(p => p.Trend).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.Result).IsRequired().HasMaxLength(50);
-            builder.Entity<User>().Property(p => p.MembershipId).IsRequired();
+            //builder.Entity<User>().Property(p => p.MembershipId).IsRequired();
             builder.Entity<User>().Property(p => p.CreateAt).IsRequired();
             
             //Payments

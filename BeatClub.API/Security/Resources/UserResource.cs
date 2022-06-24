@@ -15,7 +15,7 @@ namespace BeatClub.API.Security.Resources
         public string TypeUser { get; set; }
         public string Trend { get; set; }
         public string Result { get; set; }
-        public int MembershipId { get; set; }
+        //public int MembershipId { get; set; }
         public DateTime CreateAt { get; set; }
     }
 }
