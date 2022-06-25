@@ -1,9 +1,12 @@
 using System;
 using BeatClub.API.BeatClub.Domain.Repositories;
 using BeatClub.API.BeatClub.Domain.Services;
-using BeatClub.API.BeatClub.Mapping;
 using BeatClub.API.BeatClub.Persistence.Repositories;
 using BeatClub.API.BeatClub.Services;
+using BeatClub.API.Security.Authorization.Handlers.Implementations;
+using BeatClub.API.Security.Authorization.Handlers.Interfaces;
+using BeatClub.API.Security.Authorization.Middleware;
+using BeatClub.API.Security.Authorization.Settings;
 using BeatClub.API.Security.Domain.Repositories;
 using BeatClub.API.Security.Domain.Services;
 using BeatClub.API.Security.Persistence.Repositories;
@@ -26,6 +29,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+//Add CORS service
+
+builder.Services.AddCors();
+
+// AppSettings Configuration
+
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+
+
 builder.Services.AddSwaggerGen(options =>
     {
         // Add API Documentation Information
@@ -71,8 +84,12 @@ builder.Services.AddRouting(options =>
 
 // Dependency Injection Configuration
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUserService, UserService>();
+// Shared Injection Configuration
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+// BeatClub Injection Configuration
+
 builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 builder.Services.AddScoped<IMessageService, MessageService>();
 builder.Services.AddScoped<ITrackRepository, TrackRepository>();
@@ -85,13 +102,20 @@ builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
 builder.Services.AddScoped<IPaymentService, PaymentService>();
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+// Security Injection Configuration
+
+builder.Services.AddScoped<IJwtHandler, JwtHandler>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 //AutoMapper Configuration
 
 builder.Services.AddAutoMapper(
-    typeof(ModelToResourceProfile),
-    typeof(ResourceToModelProfile));
+    typeof(BeatClub.API.BeatClub.Mapping.ModelToResourceProfile),
+    typeof(BeatClub.API.BeatClub.Mapping.ResourceToModelProfile),
+    typeof(BeatClub.API.Security.Mapping.ModelToResourceProfile),
+    typeof(BeatClub.API.Security.Mapping.ResourceToModelProfile));
 
 var app = builder.Build();
 
@@ -114,6 +138,19 @@ if (app.Environment.IsDevelopment())
         options.RoutePrefix = "swagger";
     });
 }
+
+// Configuration CORS
+
+app.UseCors(x => x
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
+
+// Configure error handler middleware
+app.UseMiddleware<ErrorHandlerMiddleware>();
+
+// Configure JWT Handling Middleware
+app.UseMiddleware<JwtMiddleware>();
 
 app.UseHttpsRedirection();
 

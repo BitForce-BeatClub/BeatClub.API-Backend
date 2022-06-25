@@ -20,8 +20,6 @@ namespace BeatClub.API.Security.Domain.Services.Communication
         [Required]
         public DateTime CreateAt { get; set; }
         [Required]
-        public int MembershipId { get; set; }
-        [Required]
         public string Nickname { get; set; }
         [Required]
         public string Password { get; set; }
