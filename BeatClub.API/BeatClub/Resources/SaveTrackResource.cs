@@ -24,7 +24,9 @@ namespace BeatClub.API.BeatClub.Resources
         [Required]
         public int UserId { get; set; }
         [Required]
-        public DateTime CreateAt { get; set; }
+        public string Genre { get; set; }
+        [Required]
+        public DateTime PublishDate { get; set; }
         
     }
 }

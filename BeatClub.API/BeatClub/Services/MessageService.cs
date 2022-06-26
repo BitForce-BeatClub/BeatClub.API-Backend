@@ -28,31 +28,31 @@ namespace BeatClub.API.BeatClub.Services
             return await _messageRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Message>> ListByUserProducerIdAsync(int userProId)
+        public async Task<IEnumerable<Message>> ListByUserIdFromAsync(int userIdFrom)
         {
-            return await _messageRepository.FindByUserProducerIdAsync(userProId);
+            return await _messageRepository.FindByUserIdFromAsync(userIdFrom);
         }
 
-        public async Task<IEnumerable<Message>> ListByUserArtistIdAsync(int userArtId)
+        public async Task<IEnumerable<Message>> ListByUserIdToAsync(int userIdTo)
         {
-            return await _messageRepository.FindByUserArtistIdAsync(userArtId);
+            return await _messageRepository.FindByUserIdToAsync(userIdTo);
         }
 
         public async Task<MessageResponse> SaveAsync(Message message)
         {
             // Validate User Id
 
-            var existingUserArtist = _userRepository.FindByIdAsync(message.UserArtistId);
+            var existingUserFrom = _userRepository.FindByIdAsync(message.UserIdFrom);
 
-            if (existingUserArtist == null)
-                return new MessageResponse("Invalid UserArtist");
+            if (existingUserFrom == null)
+                return new MessageResponse("Invalid UserFrom");
             
             // Validate User Id
 
-            var existingUserProducer = _userRepository.FindByIdAsync(message.UserProducerId);
+            var existingUserTo = _userRepository.FindByIdAsync(message.UserIdTo);
 
-            if (existingUserProducer == null)
-                return new MessageResponse("Invalid UserProducer");
+            if (existingUserTo == null)
+                return new MessageResponse("Invalid UserTo");
             
             // Valid Content
 
@@ -86,17 +86,17 @@ namespace BeatClub.API.BeatClub.Services
             
             // Validate User Id
 
-            var existingUserArtist = _userRepository.FindByIdAsync(message.UserArtistId);
+            var existingUserFrom = _userRepository.FindByIdAsync(message.UserIdFrom);
 
-            if (existingUserArtist == null)
-                return new MessageResponse("Invalid UserArtist");
+            if (existingUserFrom == null)
+                return new MessageResponse("Invalid UserFrom");
             
             // Validate User Id
 
-            var existingUserProducer = _userRepository.FindByIdAsync(message.UserProducerId);
+            var existingUserTo = _userRepository.FindByIdAsync(message.UserIdTo);
 
-            if (existingUserProducer == null)
-                return new MessageResponse("Invalid UserProducer");
+            if (existingUserTo == null)
+                return new MessageResponse("Invalid UserTo");
             
             // Valid Content
 
@@ -107,9 +107,9 @@ namespace BeatClub.API.BeatClub.Services
 
             existingMessage.Content = message.Content;
             //existingMessage.CreatAt = message.CreatAt;
-            existingMessage.UserArtistId = message.UserArtistId;
-            existingMessage.UserProducerId = message.UserProducerId;
-            existingMessage.CreateAt = message.CreateAt;
+            existingMessage.UserIdFrom = message.UserIdFrom;
+            existingMessage.UserIdTo = message.UserIdTo;
+            existingMessage.MessageDate = message.MessageDate;
 
             try
             {

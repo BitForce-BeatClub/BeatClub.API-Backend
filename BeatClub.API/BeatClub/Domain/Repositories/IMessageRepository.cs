@@ -10,8 +10,8 @@ namespace BeatClub.API.BeatClub.Domain.Repositories
         Task AddAsync(Message message);
         Task<Message> FindByIdAsync(int messageId);
         Task<Message> FindByContentAsync(string content);
-        Task<IEnumerable<Message>> FindByUserProducerIdAsync(int userProId);
-        Task<IEnumerable<Message>> FindByUserArtistIdAsync(int userArtId);
+        Task<IEnumerable<Message>> FindByUserIdFromAsync(int userIdFrom);
+        Task<IEnumerable<Message>> FindByUserIdToAsync(int userIdTo);
         void Update(Message message);
         void Remove(Message message);
     }

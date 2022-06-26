@@ -9,12 +9,13 @@ namespace BeatClub.API.BeatClub.Domain.Models
         
         public string Content { get; set; }
         
-        public DateTime CreateAt { get; set; }
+        public DateTime MessageDate { get; set; }
         
         //Relationships
-        public int UserProducerId { get; set; }
-        public User UserProducer { get; set; }
-        public int UserArtistId { get; set; }
-        public User UserArtist { get; set; }
+        public int UserIdFrom { get; set; }
+        public User UserFrom { get; set; }
+        
+        public int UserIdTo { get; set; }
+        public User UserTo { get; set; }
     }
 }

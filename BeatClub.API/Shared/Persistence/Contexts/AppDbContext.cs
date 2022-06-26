@@ -30,12 +30,12 @@ namespace BeatClub.API.Shared.Persistence.Contexts
             builder.Entity<User>().Property(p => p.Nickname).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.Firstname).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.Lastname).IsRequired().HasMaxLength(50);
-            builder.Entity<User>().Property(p => p.TypeUser).IsRequired().HasMaxLength(50);
+            builder.Entity<User>().Property(p => p.Usertype).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.UrlToImage).IsRequired().HasMaxLength(200);
-            builder.Entity<User>().Property(p => p.Trend).IsRequired().HasMaxLength(50);
-            builder.Entity<User>().Property(p => p.Result).IsRequired().HasMaxLength(50);
+            builder.Entity<User>().Property(p => p.Location).IsRequired().HasMaxLength(150);
+            builder.Entity<User>().Property(p => p.Email).IsRequired().HasMaxLength(200);
             //builder.Entity<User>().Property(p => p.MembershipId).IsRequired();
-            builder.Entity<User>().Property(p => p.CreateAt).IsRequired();
+            //builder.Entity<User>().Property(p => p.CreateAt).IsRequired();
             
             //Payments
             builder.Entity<Payment>().ToTable("Payments");
@@ -52,9 +52,9 @@ namespace BeatClub.API.Shared.Persistence.Contexts
             builder.Entity<Message>().HasKey(p => p.Id);
             builder.Entity<Message>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Message>().Property(p => p.Content).IsRequired().HasMaxLength(120);
-            builder.Entity<Message>().Property(p => p.UserArtistId).IsRequired();
-            builder.Entity<Message>().Property(p => p.UserProducerId).IsRequired();
-            builder.Entity<Message>().Property(p => p.CreateAt).IsRequired();
+            builder.Entity<Message>().Property(p => p.UserIdTo).IsRequired();
+            builder.Entity<Message>().Property(p => p.UserIdFrom).IsRequired();
+            builder.Entity<Message>().Property(p => p.MessageDate).IsRequired();
             
             //Track
             builder.Entity<Track>().ToTable("Tracks");
@@ -63,9 +63,10 @@ namespace BeatClub.API.Shared.Persistence.Contexts
             builder.Entity<Track>().Property(p => p.Title).IsRequired().HasMaxLength(50);
             builder.Entity<Track>().Property(p => p.Privacy).IsRequired().HasMaxLength(50);
             builder.Entity<Track>().Property(p => p.Artist).IsRequired().HasMaxLength(50);
+            builder.Entity<Track>().Property(p => p.Genre).IsRequired().HasMaxLength(50);
             builder.Entity<Track>().Property(p => p.Cover).IsRequired().HasMaxLength(200);
             builder.Entity<Track>().Property(p => p.Source).IsRequired().HasMaxLength(200);
-            builder.Entity<Track>().Property(p => p.CreateAt).IsRequired();
+            builder.Entity<Track>().Property(p => p.PublishDate).IsRequired();
 
             //Publication
             builder.Entity<Publication>().ToTable("Publications");

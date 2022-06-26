@@ -35,7 +35,7 @@ namespace BeatClub.API.Security.Service
         {
             var user = await _userRepository.FindByNicknameAsync(request.Nickname);
             Console.WriteLine($"Request: {request.Nickname},{request.Password}");
-            Console.WriteLine($"User: {user.Id},{user.Firstname},{user.Lastname},{user.Nickname},{user.TypeUser},{user.Result},{user.Trend},{user.CreateAt},{user.UrlToImage},{user.PasswordHash}");
+            Console.WriteLine($"User: {user.Id},{user.Firstname},{user.Lastname},{user.Nickname},{user.Email},{user.Usertype},{user.Location},{user.UrlToImage},{user.Description},{user.PasswordHash}");
             
             // Perform validation
             if (user == null || !BCryptNet.Verify(request.Password, user.PasswordHash))
@@ -51,7 +51,7 @@ namespace BeatClub.API.Security.Service
             var response = _mapper.Map<AuthenticateResponse>(user);
             
             //Token is generated
-            Console.WriteLine($"Response: {response.Id},{response.Firstname},{response.Lastname},{response.Nickname},{response.TypeUser},{response.Result},{response.Trend},{response.CreateAt},{response.UrlToImage}");
+            Console.WriteLine($"Response: {response.Id},{response.Firstname},{response.Lastname},{response.Nickname},{response.Location},{response.Email},{response.Usertype},{response.Description},{response.UrlToImage}");
             response.Token = _jwtHandler.GenerateToken(user);
             //
             Console.WriteLine($"Generated token is {response.Token}");

@@ -9,6 +9,7 @@ namespace BeatClub.API.BeatClub.Domain.Models
         
         public string Title { get; set; }
         
+        public string Genre { get; set; }
         public string Privacy { get; set; }
         
         public string Artist { get; set; }
@@ -17,7 +18,7 @@ namespace BeatClub.API.BeatClub.Domain.Models
         
         public string Source { get; set; }
         
-        public DateTime CreateAt { get; set; }
+        public DateTime PublishDate { get; set; }
         
         //Relationships
         public int UserId { get; set; }
