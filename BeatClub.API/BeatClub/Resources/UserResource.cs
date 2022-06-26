@@ -15,8 +15,6 @@ namespace BeatClub.API.BeatClub.Resources
         public string location { get; set; }
         public string description { get; set; }
         public string urlToImage { get; set; }
-        public string userType { get; set; }
-        public string membership { get; set; }
 
     }
 }

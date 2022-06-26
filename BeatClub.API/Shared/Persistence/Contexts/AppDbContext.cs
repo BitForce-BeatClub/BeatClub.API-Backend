@@ -29,11 +29,11 @@ namespace BeatClub.API.Shared.Persistence.Contexts
             builder.Entity<User>().Property(p => p.nickName).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.firstName).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.lastName).IsRequired().HasMaxLength(50);
-            builder.Entity<User>().Property(p => p.userType).IsRequired().HasMaxLength(50);
+            //builder.Entity<User>().Property(p => p.userType).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.urlToImage).IsRequired().HasMaxLength(200);
             builder.Entity<User>().Property(p => p.location).IsRequired().HasMaxLength(150);
             builder.Entity<User>().Property(p => p.email).IsRequired().HasMaxLength(150);
-            builder.Entity<User>().Property(p => p.membership).IsRequired().HasMaxLength(50);
+            //builder.Entity<User>().Property(p => p.membership).IsRequired().HasMaxLength(50);
             builder.Entity<User>().Property(p => p.description).IsRequired().HasMaxLength(200);
             
             //Payments
@@ -76,13 +76,13 @@ namespace BeatClub.API.Shared.Persistence.Contexts
            
             //Membership
             builder.Entity<Membership>().ToTable("Memberships");
-            builder.Entity<Membership>().HasKey(p => p.Id);
-            builder.Entity<Membership>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Membership>().Property(p => p.Title).IsRequired().HasMaxLength(50);
-            builder.Entity<Membership>().Property(p => p.Price).IsRequired();
-            builder.Entity<Membership>().Property(p => p.Feature).IsRequired().HasMaxLength(120);
-            builder.Entity<Membership>().Property(p => p.Description).IsRequired().HasMaxLength(120);
-            builder.Entity<Membership>().Property(p => p.UrlToImage).IsRequired().HasMaxLength(200);
+            builder.Entity<Membership>().HasKey(p => p.id);
+            builder.Entity<Membership>().Property(p => p.id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Membership>().Property(p => p.title).IsRequired().HasMaxLength(50);
+            builder.Entity<Membership>().Property(p => p.price).IsRequired();
+            builder.Entity<Membership>().Property(p => p.feature).IsRequired().HasMaxLength(120);
+            builder.Entity<Membership>().Property(p => p.description).IsRequired().HasMaxLength(120);
+            builder.Entity<Membership>().Property(p => p.urlToImage).IsRequired().HasMaxLength(200);
             
             //Reviews
             builder.Entity<Review>().ToTable("Reviews");

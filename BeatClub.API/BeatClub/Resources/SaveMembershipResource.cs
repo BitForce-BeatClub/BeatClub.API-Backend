@@ -6,17 +6,17 @@ namespace BeatClub.API.BeatClub.Resources
     {
         [Required]
         [MaxLength(50)]
-        public string Title { get; set; }
+        public string title { get; set; }
         [Required]
-        public int Price { get; set; }
-        [Required]
-        [MaxLength(120)]
-        public string Feature { get; set; }
+        public int price { get; set; }
         [Required]
         [MaxLength(120)]
-        public string Description { get; set; }
+        public string feature { get; set; }
+        [Required]
+        [MaxLength(120)]
+        public string description { get; set; }
         [Required]
         [MaxLength(200)]
-        public string UrlToImage { get; set; }
+        public string urlToImage { get; set; }
     }
 }

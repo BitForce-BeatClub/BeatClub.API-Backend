@@ -32,11 +32,6 @@ namespace BeatClub.API.BeatClub.Resources
         [Required]
         [MaxLength(200)]
         public string urlToImage { get; set; }
-        [Required]
-        [MaxLength(50)]
-        public string userType { get; set; }
-        [Required]
-        public string membership { get; set; }
 
     }
 }

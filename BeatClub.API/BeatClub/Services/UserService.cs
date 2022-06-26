@@ -54,8 +54,6 @@ namespace BeatClub.API.BeatClub.Services
             existingUser.location = user.location;
             existingUser.description = user.description;
             existingUser.urlToImage = user.urlToImage;
-            existingUser.userType = user.userType;
-            existingUser.membership = user.membership;
 
             try
             {

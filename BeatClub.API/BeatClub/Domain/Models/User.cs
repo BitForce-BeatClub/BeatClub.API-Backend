@@ -10,13 +10,9 @@ namespace BeatClub.API.BeatClub.Domain.Models
         public string lastName { get; set; }
         public string firstName { get; set; }
         public string urlToImage { get; set; }
-        public string userType { get; set; }
         public string location { get; set; }
         public string email { get; set; }
         public string description { get; set; }
-        
-        //Relationships
-        public string membership { get; set; }
 
     }
 }
