@@ -29,13 +29,13 @@ namespace BeatClub.API.BeatClub.Persistence.Repositories
         {
             return await _context.Payments
                 .Include(p=>p.User)
-                .FirstOrDefaultAsync(p=>p.Id==paymentId);
+                .FirstOrDefaultAsync(p=>p.id==paymentId);
         }
 
         public async Task<IEnumerable<Payment>> FindByUserIdAsync(string userId)
         {
             return await _context.Payments
-                .Where(p => p.UserId == userId)
+                .Where(p => p.userId == userId)
                 .Include(p => p.User)
                 .ToListAsync();
         }

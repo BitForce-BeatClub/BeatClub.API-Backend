@@ -4,16 +4,11 @@ namespace BeatClub.API.BeatClub.Domain.Models
 {
     public class Payment
     {
-        public int Id { get; set; }
-        
-        public string Description { get; set; }
-        
-        public string PayMethod { get; set; }
-        
-        public int Amount { get; set; }
-        public DateTime CreateAt { get; set; }
-        
-        public string UserId { get; set; }
+        public int id { get; set; }
+        public int price { get; set; }
+        public string plan { get; set; }
+        public DateTime date { get; set; }
+        public string userId { get; set; }
         public User User { get; set; }
     }
 }

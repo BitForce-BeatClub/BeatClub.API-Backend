@@ -36,7 +36,7 @@ namespace BeatClub.API.BeatClub.Services
         {
             // Validate User Id
 
-            var existingUser = _userRepository.FindByIdAsync(payment.UserId);
+            var existingUser = _userRepository.FindByIdAsync(payment.userId);
 
             if (existingUser == null)
                 return new PaymentResponse("Invalid User");
@@ -66,19 +66,18 @@ namespace BeatClub.API.BeatClub.Services
             
             // Validate User Id
 
-            var existingUser = _userRepository.FindByIdAsync(payment.UserId);
+            var existingUser = _userRepository.FindByIdAsync(payment.userId);
 
             if (existingUser == null)
                 return new PaymentResponse("Invalid User");
             
             // Valid Name
 
-            existingPayment.Amount = payment.Amount;
-            existingPayment.Description = payment.Description;
-            //existingMessage.CreatAt = message.CreatAt;
-            existingPayment.PayMethod = payment.PayMethod;
-            existingPayment.UserId = payment.UserId;
-            existingPayment.CreateAt = payment.CreateAt;
+            existingPayment.plan = payment.plan;
+            existingPayment.price = payment.price;
+            existingPayment.date = payment.date;
+            existingPayment.userId = payment.userId;
+            
             
             try
             {

@@ -38,14 +38,13 @@ namespace BeatClub.API.Shared.Persistence.Contexts
             
             //Payments
             builder.Entity<Payment>().ToTable("Payments");
-            builder.Entity<Payment>().HasKey(p => p.Id);
-            builder.Entity<Payment>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Payment>().Property(p => p.Description).IsRequired().HasMaxLength(120);
-            builder.Entity<Payment>().Property(p => p.Amount).IsRequired();
-            builder.Entity<Payment>().Property(p => p.PayMethod).IsRequired().HasMaxLength(50);
-            builder.Entity<Payment>().Property(p => p.UserId).IsRequired();
-            builder.Entity<Payment>().Property(p => p.CreateAt).IsRequired();
-
+            builder.Entity<Payment>().HasKey(p => p.id);
+            builder.Entity<Payment>().Property(p => p.id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Payment>().Property(p => p.plan).IsRequired().HasMaxLength(50);
+            builder.Entity<Payment>().Property(p => p.price).IsRequired();
+            builder.Entity<Payment>().Property(p => p.date).IsRequired();
+            builder.Entity<Payment>().Property(p => p.userId).IsRequired();
+            
             //Messages
             builder.Entity<Message>().ToTable("Messages");
             builder.Entity<Message>().HasKey(p => p.Id);
