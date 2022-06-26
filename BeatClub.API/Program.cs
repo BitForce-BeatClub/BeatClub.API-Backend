@@ -30,16 +30,16 @@ builder.Services.AddSwaggerGen(options =>
             Version = "v1",
             Title = "BeatClub API",
             Description = "BeatClub RESTful API",
-            TermsOfService = new Uri("https://beatclub.com/tos"),
+            TermsOfService = new Uri("https://bitforce-beatclub.github.io/LandingPage/#services"),
             Contact = new OpenApiContact
             {
                 Name = "BitForce",
-                Url = new Uri("https://bitforce")
+                Url = new Uri("https://bitforce-beatclub.github.io/LandingPage/")
             },
             License = new OpenApiLicense
             {
                 Name = "BeatClub Resources License",
-                Url = new Uri("https://beatclub.com/license")
+                Url = new Uri("https://bitforce-beatclub.github.io/LandingPage/#services")
             }
         });
         
