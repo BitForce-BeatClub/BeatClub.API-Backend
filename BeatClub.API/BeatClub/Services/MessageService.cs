@@ -27,35 +27,35 @@ namespace BeatClub.API.BeatClub.Services
             return await _messageRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Message>> ListByUserProducerIdAsync(string userProId)
+        public async Task<IEnumerable<Message>> ListByUserIdFromAsync(string userIdFrom)
         {
-            return await _messageRepository.FindByUserProducerIdAsync(userProId);
+            return await _messageRepository.FindByUserIdFromAsync(userIdFrom);
         }
 
-        public async Task<IEnumerable<Message>> ListByUserArtistIdAsync(string userArtId)
+        public async Task<IEnumerable<Message>> ListByUserIdToAsync(string userIdTo)
         {
-            return await _messageRepository.FindByUserArtistIdAsync(userArtId);
+            return await _messageRepository.FindByUserIdToAsync(userIdTo);
         }
 
         public async Task<MessageResponse> SaveAsync(Message message)
         {
             // Validate User Id
 
-            var existingUserArtist = _userRepository.FindByIdAsync(message.UserArtistId);
+            var existingUserIdFrom = _userRepository.FindByIdAsync(message.userIdFrom);
 
-            if (existingUserArtist == null)
-                return new MessageResponse("Invalid UserArtist");
+            if (existingUserIdFrom == null)
+                return new MessageResponse("Invalid UserIdFrom");
             
             // Validate User Id
 
-            var existingUserProducer = _userRepository.FindByIdAsync(message.UserProducerId);
+            var existingUserIdTo = _userRepository.FindByIdAsync(message.userIdTo);
 
-            if (existingUserProducer == null)
-                return new MessageResponse("Invalid UserProducer");
+            if (existingUserIdTo == null)
+                return new MessageResponse("Invalid UserIdTo");
             
             // Valid Content
 
-            var existingMessageWithContent = await _messageRepository.FindByContentAsync(message.Content);
+            var existingMessageWithContent = await _messageRepository.FindByContentAsync(message.content);
 
             if (existingMessageWithContent != null)
                 return new MessageResponse("Message Content already exists.");
@@ -85,30 +85,29 @@ namespace BeatClub.API.BeatClub.Services
             
             // Validate User Id
 
-            var existingUserArtist = _userRepository.FindByIdAsync(message.UserArtistId);
+            var existingUserIdFrom = _userRepository.FindByIdAsync(message.userIdFrom);
 
-            if (existingUserArtist == null)
-                return new MessageResponse("Invalid UserArtist");
+            if (existingUserIdFrom == null)
+                return new MessageResponse("Invalid UserIdFrom");
             
             // Validate User Id
 
-            var existingUserProducer = _userRepository.FindByIdAsync(message.UserProducerId);
+            var existingUserIdTo = _userRepository.FindByIdAsync(message.userIdTo);
 
-            if (existingUserProducer == null)
-                return new MessageResponse("Invalid UserProducer");
+            if (existingUserIdTo == null)
+                return new MessageResponse("Invalid UserIdTo");
             
             // Valid Content
 
-            var existingMessageWithContent = await _messageRepository.FindByContentAsync(message.Content);
+            var existingMessageWithContent = await _messageRepository.FindByContentAsync(message.content);
 
-            if (existingMessageWithContent != null && existingMessageWithContent.Id != existingMessage.Id)
+            if (existingMessageWithContent != null && existingMessageWithContent.id != existingMessage.id)
                 return new MessageResponse("Message Content already exists.");
 
-            existingMessage.Content = message.Content;
-            //existingMessage.CreatAt = message.CreatAt;
-            existingMessage.UserArtistId = message.UserArtistId;
-            existingMessage.UserProducerId = message.UserProducerId;
-            existingMessage.CreateAt = message.CreateAt;
+            existingMessage.content = message.content;
+            existingMessage.userIdTo = message.userIdTo;
+            existingMessage.userIdFrom = message.userIdFrom;
+            existingMessage.messageDate = message.messageDate;
 
             try
             {

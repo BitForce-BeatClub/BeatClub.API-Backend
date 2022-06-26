@@ -4,16 +4,14 @@ namespace BeatClub.API.BeatClub.Domain.Models
 {
     public class Message
     {
-        public int Id { get; set; }
-        
-        public string Content { get; set; }
-        
-        public DateTime CreateAt { get; set; }
+        public int id { get; set; }
+        public string content { get; set; }
+        public DateTime messageDate { get; set; }
         
         //Relationships
-        public string UserProducerId { get; set; }
-        public User UserProducer { get; set; }
-        public string UserArtistId { get; set; }
-        public User UserArtist { get; set; }
+        public string userIdFrom { get; set; }
+        public User UserFrom { get; set; }
+        public string userIdTo { get; set; }
+        public User UserTo { get; set; }
     }
 }

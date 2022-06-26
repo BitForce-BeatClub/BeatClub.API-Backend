@@ -7,18 +7,16 @@ namespace BeatClub.API.BeatClub.Resources
     {
         [Required]
         [MaxLength(120)]
-        public string Content { get; set; }
-        
-        /*[MaxLength(20)]
-        public DateTime CreatAt { get; set; }*/
+        public string content { get; set; }
         
         [Required]
-        public string UserProducerId { get; set; }
+        public string userIdFrom { get; set; }
         
         [Required]
-        public string UserArtistId { get; set; }
+        public string userIdTo { get; set; }
         
         [Required]
-        public DateTime CreateAt { get; set; }
+        public DateTime messageDate { get; set; }
+        
     }
 }

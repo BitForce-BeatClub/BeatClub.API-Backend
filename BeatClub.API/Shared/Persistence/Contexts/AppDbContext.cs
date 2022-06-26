@@ -47,12 +47,12 @@ namespace BeatClub.API.Shared.Persistence.Contexts
             
             //Messages
             builder.Entity<Message>().ToTable("Messages");
-            builder.Entity<Message>().HasKey(p => p.Id);
-            builder.Entity<Message>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Message>().Property(p => p.Content).IsRequired().HasMaxLength(120);
-            builder.Entity<Message>().Property(p => p.UserArtistId).IsRequired();
-            builder.Entity<Message>().Property(p => p.UserProducerId).IsRequired();
-            builder.Entity<Message>().Property(p => p.CreateAt).IsRequired();
+            builder.Entity<Message>().HasKey(p => p.id);
+            builder.Entity<Message>().Property(p => p.id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Message>().Property(p => p.content).IsRequired().HasMaxLength(120);
+            builder.Entity<Message>().Property(p => p.userIdFrom).IsRequired();
+            builder.Entity<Message>().Property(p => p.userIdTo).IsRequired();
+            builder.Entity<Message>().Property(p => p.messageDate).IsRequired();
             
             //Track
             builder.Entity<Track>().ToTable("Tracks");

@@ -4,11 +4,11 @@ namespace BeatClub.API.BeatClub.Resources
 {
     public class MessageResource
     {
-        public int Id { get; set; }
-        public string Content { get; set; }
-        //public DateTime CreatAt { get; set; }
-        public string UserProducerId { get; set; }
-        public DateTime CreateAt { get; set; }
-        public string UserArtistId { get; set; }
+        
+        public int id { get; set; }
+        public string content { get; set; }
+        public DateTime messageDate { get; set; }
+        public string userIdFrom { get; set; }
+        public string userIdTo { get; set; }
     }
 }
