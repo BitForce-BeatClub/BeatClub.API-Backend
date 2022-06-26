@@ -32,7 +32,7 @@ namespace BeatClub.API.BeatClub.Persistence.Repositories
                 .FirstOrDefaultAsync(p=>p.Id==paymentId);
         }
 
-        public async Task<IEnumerable<Payment>> FindByUserIdAsync(int userId)
+        public async Task<IEnumerable<Payment>> FindByUserIdAsync(string userId)
         {
             return await _context.Payments
                 .Where(p => p.UserId == userId)

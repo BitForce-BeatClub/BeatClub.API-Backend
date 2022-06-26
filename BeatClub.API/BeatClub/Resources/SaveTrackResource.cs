@@ -8,23 +8,26 @@ namespace BeatClub.API.BeatClub.Resources
         
         [Required]
         [MaxLength(50)]
-        public string Title { get; set; }
+        public string title { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Privacy { get; set; }
+        public string privacy { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Artist { get; set; }
+        public string artist { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string genre { get; set; }
         [Required]
         [MaxLength(200)]
-        public string Cover { get; set; }
+        public string cover { get; set; }
         [Required]
         [MaxLength(200)]
-        public string Source { get; set; }
+        public string source { get; set; }
         [Required]
-        public int UserId { get; set; }
+        public string userId { get; set; }
         [Required]
-        public DateTime CreateAt { get; set; }
-        
+        public DateTime publishDate { get; set; }
+
     }
 }

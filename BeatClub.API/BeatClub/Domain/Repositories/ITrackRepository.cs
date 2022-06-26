@@ -14,7 +14,7 @@ namespace BeatClub.API.BeatClub.Domain.Repositories
         
         Task<Track> FindByTitleAsync(string title);
 
-        Task<IEnumerable<Track>> FindByUserIdAsync(int userId);
+        Task<IEnumerable<Track>> FindByUserIdAsync(string userId);
         
         void Update(Track track);
         

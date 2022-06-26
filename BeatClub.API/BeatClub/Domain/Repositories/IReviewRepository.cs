@@ -9,8 +9,8 @@ namespace BeatClub.API.BeatClub.Domain.Repositories
         Task<IEnumerable<Review>> ListAsync();
         Task AddAsync(Review review);
         Task<Review> FindByIdAsync(int reviewId);
-        Task<IEnumerable<Review>> FindByUserProducerIdAsync(int userProId);
-        Task<IEnumerable<Review>> FindByUserArtistIdAsync(int userArtId);
+        Task<IEnumerable<Review>> FindByUserProducerIdAsync(string userProId);
+        Task<IEnumerable<Review>> FindByUserArtistIdAsync(string userArtId);
         void Update(Review review);
         void Remove(Review review);
     }

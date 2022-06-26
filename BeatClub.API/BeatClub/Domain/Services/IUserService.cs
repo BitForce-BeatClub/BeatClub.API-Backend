@@ -9,7 +9,7 @@ namespace BeatClub.API.BeatClub.Domain.Services
     {
         Task<IEnumerable<User>> ListAsync();
         Task<UserResponse> SaveAsync(User user);
-        Task<UserResponse> UpdateAsync(int id, User user);
-        Task<UserResponse> DeleteAsync(int id);
+        Task<UserResponse> UpdateAsync(string id, User user);
+        Task<UserResponse> DeleteAsync(string id);
     }
 }

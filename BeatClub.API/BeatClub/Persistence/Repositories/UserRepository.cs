@@ -24,7 +24,7 @@ namespace BeatClub.API.BeatClub.Persistence.Repositories
             await _context.Users.AddAsync(user);
         }
 
-        public async Task<User> FindByIdAsync(int id)
+        public async Task<User> FindByIdAsync(string id)
         {
             return await _context.Users.FindAsync(id);
         }

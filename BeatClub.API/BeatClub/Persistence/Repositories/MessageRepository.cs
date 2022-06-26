@@ -44,7 +44,7 @@ namespace BeatClub.API.BeatClub.Persistence.Repositories
                 .FirstOrDefaultAsync(p => p.Content == content);
         }
 
-        public async Task<IEnumerable<Message>> FindByUserProducerIdAsync(int userProId)
+        public async Task<IEnumerable<Message>> FindByUserProducerIdAsync(string userProId)
         {
             return await _context.Messages.
                 Where(p=>p.UserProducerId==userProId)
@@ -52,7 +52,7 @@ namespace BeatClub.API.BeatClub.Persistence.Repositories
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Message>> FindByUserArtistIdAsync(int userArtId)
+        public async Task<IEnumerable<Message>> FindByUserArtistIdAsync(string userArtId)
         {
             return await _context.Messages.
                 Where(p=>p.UserArtistId==userArtId)

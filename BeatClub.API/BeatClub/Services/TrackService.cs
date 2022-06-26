@@ -29,7 +29,7 @@ namespace BeatClub.API.BeatClub.Services
             return await _trackRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Track>> ListByUserIdAsync(int userId)
+        public async Task<IEnumerable<Track>> ListByUserIdAsync(string userId)
         {
             return await _trackRepository.FindByUserIdAsync(userId);
         }
@@ -38,14 +38,14 @@ namespace BeatClub.API.BeatClub.Services
         {
             // Validate User Id
 
-            var existingUser = _userRepository.FindByIdAsync(track.UserId);
+            var existingUser = _userRepository.FindByIdAsync(track.userId);
 
             if (existingUser == null)
                 return new TrackResponse("Invalid User");
             
             // Valid Title
 
-            var existingTrackWithTitle = await _trackRepository.FindByTitleAsync(track.Title);
+            var existingTrackWithTitle = await _trackRepository.FindByTitleAsync(track.title);
 
             if (existingTrackWithTitle != null)
                 return new TrackResponse("Track Title already exists.");
@@ -74,25 +74,26 @@ namespace BeatClub.API.BeatClub.Services
             
             // Validate User Id
 
-            var existingUser = _userRepository.FindByIdAsync(track.UserId);
+            var existingUser = _userRepository.FindByIdAsync(track.userId);
 
             if (existingUser == null)
                 return new TrackResponse("Invalid User");
             
             // Valid Content
 
-            var existingTrackWithTitle = await _trackRepository.FindByTitleAsync(track.Title);
+            var existingTrackWithTitle = await _trackRepository.FindByTitleAsync(track.title);
 
-            if (existingTrackWithTitle != null && existingTrackWithTitle.Id != existingtrack.Id)
+            if (existingTrackWithTitle != null && existingTrackWithTitle.id != existingtrack.id)
                 return new TrackResponse("Track Title already exists.");
 
-            existingtrack.Title = track.Title;
-            existingtrack.Privacy = track.Privacy;
-            existingtrack.Artist = track.Artist;
-            existingtrack.Cover = track.Cover;
-            existingtrack.Source = track.Source;
-            existingtrack.UserId = track.UserId;
-            existingtrack.CreateAt = track.CreateAt;
+            existingtrack.title = track.title;
+            existingtrack.privacy = track.privacy;
+            existingtrack.artist = track.artist;
+            existingtrack.cover = track.cover;
+            existingtrack.source = track.source;
+            existingtrack.userId = track.userId;
+            existingtrack.genre = track.genre;
+            existingtrack.publishDate = track.publishDate;
 
             try
             {

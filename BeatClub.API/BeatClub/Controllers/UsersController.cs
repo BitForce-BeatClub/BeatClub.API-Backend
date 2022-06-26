@@ -58,7 +58,7 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveUserResource resource)
+        public async Task<IActionResult> PutAsync(string id, [FromBody] SaveUserResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
@@ -76,7 +76,7 @@ namespace BeatClub.API.BeatClub.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(int id)
+        public async Task<IActionResult> DeleteAsync(string id)
         {
             var result = await _userService.DeleteAsync(id);
             

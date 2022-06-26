@@ -15,7 +15,7 @@ namespace BeatClub.API.BeatClub.Resources
         
         //public DateTime CreateAt { get; set; }
         public DateTime CreateAt { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
        
     }
 }

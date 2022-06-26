@@ -7,39 +7,36 @@ namespace BeatClub.API.BeatClub.Resources
     [SwaggerSchema(Required = new[]{"Nickname"})]
     public class SaveUserResource
     {
+        [SwaggerSchema("User Id")]
+        [Required]
+        public string id { get; set; }
         [SwaggerSchema("User Nickname")]
         [Required]
         [MaxLength(50)]
-        public string Nickname { get; set; }
-        
+        public string nickName {get; set; }
         [Required]
         [MaxLength(50)]
-        public string Firstname { get; set; }
-        
+        public string lastName { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Lastname { get; set; }
-        
+        public string firstName { get; set; }
+        [Required]
+        [MaxLength(150)]
+        public string email { get; set; }
+        [Required]
+        [MaxLength(150)]
+        public string location { get; set; }
         [Required]
         [MaxLength(200)]
-        public string UrlToImage { get; set; }
-        
+        public string description { get; set; }
+        [Required]
+        [MaxLength(200)]
+        public string urlToImage { get; set; }
         [Required]
         [MaxLength(50)]
-        public string TypeUser { get; set; }
-        
+        public string userType { get; set; }
         [Required]
-        [MaxLength(50)]
-        public string Trend { get; set; }
-        
-        [Required]
-        [MaxLength(50)]
-        public string Result { get; set; }
-        
-        [Required]
-        public DateTime CreateAt { get; set; }
-        
-        [Required]
-        public int MembershipId { get; set; }
+        public string membership { get; set; }
+
     }
 }

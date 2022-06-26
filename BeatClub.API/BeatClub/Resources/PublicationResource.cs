@@ -8,7 +8,7 @@ namespace BeatClub.API.BeatClub.Resources
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime CreateAt { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         
     }
 }

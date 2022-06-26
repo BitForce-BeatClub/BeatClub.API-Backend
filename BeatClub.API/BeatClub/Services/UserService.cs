@@ -40,22 +40,22 @@ namespace BeatClub.API.BeatClub.Services
             }
         }
 
-        public async Task<UserResponse> UpdateAsync(int id, User user)
+        public async Task<UserResponse> UpdateAsync(string id, User user)
         {
             var existingUser = await _userRepository.FindByIdAsync(id);
 
             if (existingUser == null)
                 return new UserResponse("User not found.");
 
-            existingUser.Nickname = user.Nickname;
-            existingUser.Firstname = user.Firstname;
-            existingUser.Lastname = user.Lastname;
-            existingUser.TypeUser = user.TypeUser;
-            existingUser.UrlToImage = user.UrlToImage;
-            existingUser.Trend = user.Trend;
-            existingUser.Result = user.Result;
-            existingUser.CreateAt = user.CreateAt;
-            existingUser.MembershipId = user.MembershipId;
+            existingUser.nickName = user.nickName;
+            existingUser.firstName = user.firstName;
+            existingUser.lastName = user.lastName;
+            existingUser.email = user.email;
+            existingUser.location = user.location;
+            existingUser.description = user.description;
+            existingUser.urlToImage = user.urlToImage;
+            existingUser.userType = user.userType;
+            existingUser.membership = user.membership;
 
             try
             {
@@ -71,7 +71,7 @@ namespace BeatClub.API.BeatClub.Services
 
         }
 
-        public async Task<UserResponse> DeleteAsync(int id)
+        public async Task<UserResponse> DeleteAsync(string id)
         {
             var existingUser = await _userRepository.FindByIdAsync(id);
 

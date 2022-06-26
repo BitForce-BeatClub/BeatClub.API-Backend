@@ -8,7 +8,7 @@ namespace BeatClub.API.BeatClub.Domain.Repositories
     {
         Task<IEnumerable<User>> ListAsync();
         Task AddAsync(User user);
-        Task<User> FindByIdAsync(int id);
+        Task<User> FindByIdAsync(string id);
         void Update(User user);
         void Remove(User user);
     }

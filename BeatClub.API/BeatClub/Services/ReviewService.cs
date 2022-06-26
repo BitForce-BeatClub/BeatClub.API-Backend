@@ -27,12 +27,12 @@ namespace BeatClub.API.BeatClub.Services
             return await _reviewRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Review>> ListByUserProducerIdAsync(int userProId)
+        public async Task<IEnumerable<Review>> ListByUserProducerIdAsync(string userProId)
         {
             return await _reviewRepository.FindByUserProducerIdAsync(userProId);
         }
 
-        public async Task<IEnumerable<Review>> ListByUserArtistIdAsync(int userArtId)
+        public async Task<IEnumerable<Review>> ListByUserArtistIdAsync(string userArtId)
         {
             return await _reviewRepository.FindByUserArtistIdAsync(userArtId);
         }

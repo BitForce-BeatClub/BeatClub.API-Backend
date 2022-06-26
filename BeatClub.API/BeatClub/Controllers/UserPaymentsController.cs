@@ -31,7 +31,7 @@ namespace BeatClub.API.BeatClub.Controllers
             OperationId = "GetUserPayments",
             Tags = new []{"Users"}
         )]
-        public async Task<IEnumerable<PaymentResource>> GetAllByUserId(int userId)
+        public async Task<IEnumerable<PaymentResource>> GetAllByUserId(string userId)
         {
             var payments = await _paymentService.ListByUserIdAsync(userId);
 

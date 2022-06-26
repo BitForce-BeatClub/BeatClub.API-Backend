@@ -27,7 +27,7 @@ namespace BeatClub.API.BeatClub.Services
             return await _paymentRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Payment>> ListByUserIdAsync(int userId)
+        public async Task<IEnumerable<Payment>> ListByUserIdAsync(string userId)
         {
             return await _paymentRepository.FindByUserIdAsync(userId);
         }

@@ -12,9 +12,9 @@ namespace BeatClub.API.BeatClub.Domain.Models
         
         public DateTime CreateAt { get; set; }
         
-        public int UserProducerId { get; set; }
+        public string UserProducerId { get; set; }
         public User UserProducer { get; set; }
-        public int UserArtistId { get; set; }
+        public string UserArtistId { get; set; }
         public User UserArtist { get; set; }
         
     }

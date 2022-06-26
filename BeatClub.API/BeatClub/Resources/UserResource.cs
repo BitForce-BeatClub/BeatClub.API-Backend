@@ -6,16 +6,17 @@ namespace BeatClub.API.BeatClub.Resources
     public class UserResource
     {
         [SwaggerSchema("User Identifier")]
-        public int Id { get; set; }
+        public string id { get; set; }
         [SwaggerSchema("User Nickname")]
-        public string Nickname { get; set; }
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
-        public string UrlToImage { get; set; }
-        public string TypeUser { get; set; }
-        public string Trend { get; set; }
-        public string Result { get; set; }
-        public int MembershipId { get; set; }
-        public DateTime CreateAt { get; set; }
+        public string nickName {get; set; }
+        public string lastName { get; set; }
+        public string firstName { get; set; }
+        public string email { get; set; }
+        public string location { get; set; }
+        public string description { get; set; }
+        public string urlToImage { get; set; }
+        public string userType { get; set; }
+        public string membership { get; set; }
+
     }
 }
