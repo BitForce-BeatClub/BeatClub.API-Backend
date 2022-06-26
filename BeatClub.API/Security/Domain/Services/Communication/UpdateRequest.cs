@@ -12,14 +12,17 @@ namespace BeatClub.API.Security.Domain.Services.Communication
         
         public string UrlToImage { get; set; }
         
-        public string TypeUser { get; set; }
+        public string Usertype { get; set; }
         
-        public string Trend { get; set; }
+        public string Location { get; set; }
         
-        public string Result { get; set; }
+        public string Description { get; set; }
         
-        public DateTime CreateAt { get; set; }
+        public string Email { get; set; }
         public string Nickname { get; set; }
         public string Password { get; set; }
+        
+        
+        
     }
 }

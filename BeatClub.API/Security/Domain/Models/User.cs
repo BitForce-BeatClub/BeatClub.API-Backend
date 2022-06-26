@@ -15,10 +15,7 @@ namespace BeatClub.API.Security.Domain.Models
         public string UrlToImage { get; set; }
         public string Location { get; set; }
         public string Description { get; set; }
-        //Relationships
-        /*public int MembershipId { get; set; }
-        public Membership Membership { get; set; }*/
-        
+
         [JsonIgnore]
         public string PasswordHash { get; set; }
         

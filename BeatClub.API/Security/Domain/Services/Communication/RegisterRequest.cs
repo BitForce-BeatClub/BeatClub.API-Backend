@@ -12,16 +12,16 @@ namespace BeatClub.API.Security.Domain.Services.Communication
         [Required]
         public string UrlToImage { get; set; }
         [Required]
-        public string TypeUser { get; set; }
-        [Required]
-        public string Trend { get; set; }
-        [Required]
-        public string Result { get; set; }
-        [Required]
-        public DateTime CreateAt { get; set; }
+        public string Email { get; set; }
         [Required]
         public string Nickname { get; set; }
         [Required]
         public string Password { get; set; }
+        [Required]
+        public string Usertype { get; set; }
+        [Required]
+        public string Location { get; set; }
+        [Required]
+        public string Description { get; set; }
     }
 }
