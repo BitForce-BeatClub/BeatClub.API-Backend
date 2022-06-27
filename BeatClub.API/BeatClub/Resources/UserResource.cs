@@ -9,6 +9,7 @@ namespace BeatClub.API.BeatClub.Resources
         public string id { get; set; }
         [SwaggerSchema("User Nickname")]
         public string nickName {get; set; }
+        [SwaggerSchema("User LastName")]
         public string lastName { get; set; }
         public string firstName { get; set; }
         public string email { get; set; }
