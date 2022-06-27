@@ -215,3 +215,12 @@ D:\Github Repositorios\BeatClub.API-Backend\BeatClub.API\obj\Debug\net6.0\BeatCl
 D:\Github Repositorios\BeatClub.API-Backend\BeatClub.API\obj\Debug\net6.0\BeatClub.API.genruntimeconfig.cache
 D:\Github Repositorios\BeatClub.API-Backend\BeatClub.API\obj\Debug\net6.0\ref\BeatClub.API.dll
 C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

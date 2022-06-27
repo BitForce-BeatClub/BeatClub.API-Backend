@@ -5,6 +5,7 @@ using BeatClub.API.BeatClub.Domain.Models;
 using BeatClub.API.BeatClub.Domain.Repositories;
 using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Domain.Services.Communication;
+using BeatClub.API.Security.Domain.Repositories;
 using BeatClub.API.Shared.Domain.Repositories;
 
 namespace BeatClub.API.BeatClub.Services
@@ -29,7 +30,7 @@ namespace BeatClub.API.BeatClub.Services
             return await _trackRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Track>> ListByUserIdAsync(string userId)
+        public async Task<IEnumerable<Track>> ListByUserIdAsync(int userId)
         {
             return await _trackRepository.FindByUserIdAsync(userId);
         }
@@ -38,14 +39,14 @@ namespace BeatClub.API.BeatClub.Services
         {
             // Validate User Id
 
-            var existingUser = _userRepository.FindByIdAsync(track.userId);
+            var existingUser = _userRepository.FindByIdAsync(track.UserId);
 
             if (existingUser == null)
                 return new TrackResponse("Invalid User");
             
             // Valid Title
 
-            var existingTrackWithTitle = await _trackRepository.FindByTitleAsync(track.title);
+            var existingTrackWithTitle = await _trackRepository.FindByTitleAsync(track.Title);
 
             if (existingTrackWithTitle != null)
                 return new TrackResponse("Track Title already exists.");
@@ -74,26 +75,26 @@ namespace BeatClub.API.BeatClub.Services
             
             // Validate User Id
 
-            var existingUser = _userRepository.FindByIdAsync(track.userId);
+            var existingUser = _userRepository.FindByIdAsync(track.UserId);
 
             if (existingUser == null)
                 return new TrackResponse("Invalid User");
             
             // Valid Content
 
-            var existingTrackWithTitle = await _trackRepository.FindByTitleAsync(track.title);
+            var existingTrackWithTitle = await _trackRepository.FindByTitleAsync(track.Title);
 
-            if (existingTrackWithTitle != null && existingTrackWithTitle.id != existingtrack.id)
+            if (existingTrackWithTitle != null && existingTrackWithTitle.Id != existingtrack.Id)
                 return new TrackResponse("Track Title already exists.");
 
-            existingtrack.title = track.title;
-            existingtrack.privacy = track.privacy;
-            existingtrack.artist = track.artist;
-            existingtrack.cover = track.cover;
-            existingtrack.source = track.source;
-            existingtrack.userId = track.userId;
-            existingtrack.genre = track.genre;
-            existingtrack.publishDate = track.publishDate;
+            existingtrack.Title = track.Title;
+            existingtrack.Privacy = track.Privacy;
+            existingtrack.Artist = track.Artist;
+            existingtrack.Cover = track.Cover;
+            existingtrack.Source = track.Source;
+            existingtrack.Genre = track.Genre;
+            existingtrack.UserId = track.UserId;
+            existingtrack.PublishDate = track.PublishDate;
 
             try
             {

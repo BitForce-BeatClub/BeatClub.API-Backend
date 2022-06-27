@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using BeatClub.API.BeatClub.Domain.Models;
 using BeatClub.API.BeatClub.Resources;
+using BeatClub.API.Security.Domain.Models;
+using BeatClub.API.Security.Resources;
 
 namespace BeatClub.API.BeatClub.Mapping
 {
@@ -8,7 +10,7 @@ namespace BeatClub.API.BeatClub.Mapping
     {
         public ModelToResourceProfile()
         {
-            CreateMap<User, UserResource>();
+            //CreateMap<User, UserResource>();
             CreateMap<Message, MessageResource>();
             CreateMap<Track, TrackResource>();
             CreateMap<Publication, PublicationResource>();

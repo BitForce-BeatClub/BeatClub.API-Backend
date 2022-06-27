@@ -8,8 +8,8 @@ namespace BeatClub.API.BeatClub.Domain.Services
     public interface IMessageService
     {
         Task<IEnumerable<Message>> ListAsync();
-        Task<IEnumerable<Message>> ListByUserIdFromAsync(string userIdFrom);
-        Task<IEnumerable<Message>> ListByUserIdToAsync(string userIdTo);
+        Task<IEnumerable<Message>> ListByUserIdFromAsync(int userIdFrom);
+        Task<IEnumerable<Message>> ListByUserIdToAsync(int userIdTo);
         Task<MessageResponse> SaveAsync(Message message);
         Task<MessageResponse> UpdateAsync(int messageId, Message message);
         Task<MessageResponse> DeleteAsync(int messageId);

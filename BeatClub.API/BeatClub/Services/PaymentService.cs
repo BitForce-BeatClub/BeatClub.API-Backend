@@ -5,6 +5,7 @@ using BeatClub.API.BeatClub.Domain.Models;
 using BeatClub.API.BeatClub.Domain.Repositories;
 using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Domain.Services.Communication;
+using BeatClub.API.Security.Domain.Repositories;
 using BeatClub.API.Shared.Domain.Repositories;
 
 namespace BeatClub.API.BeatClub.Services
@@ -27,7 +28,7 @@ namespace BeatClub.API.BeatClub.Services
             return await _paymentRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Payment>> ListByUserIdAsync(string userId)
+        public async Task<IEnumerable<Payment>> ListByUserIdAsync(int userId)
         {
             return await _paymentRepository.FindByUserIdAsync(userId);
         }
@@ -36,7 +37,7 @@ namespace BeatClub.API.BeatClub.Services
         {
             // Validate User Id
 
-            var existingUser = _userRepository.FindByIdAsync(payment.userId);
+            var existingUser = _userRepository.FindByIdAsync(payment.UserId);
 
             if (existingUser == null)
                 return new PaymentResponse("Invalid User");
@@ -66,18 +67,19 @@ namespace BeatClub.API.BeatClub.Services
             
             // Validate User Id
 
-            var existingUser = _userRepository.FindByIdAsync(payment.userId);
+            var existingUser = _userRepository.FindByIdAsync(payment.UserId);
 
             if (existingUser == null)
                 return new PaymentResponse("Invalid User");
             
             // Valid Name
 
-            existingPayment.plan = payment.plan;
-            existingPayment.price = payment.price;
-            existingPayment.date = payment.date;
-            existingPayment.userId = payment.userId;
-            
+            existingPayment.Amount = payment.Amount;
+            existingPayment.Description = payment.Description;
+            //existingMessage.CreatAt = message.CreatAt;
+            existingPayment.PayMethod = payment.PayMethod;
+            existingPayment.UserId = payment.UserId;
+            existingPayment.CreateAt = payment.CreateAt;
             
             try
             {

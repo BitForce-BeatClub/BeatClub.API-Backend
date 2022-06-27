@@ -48,11 +48,11 @@ namespace BeatClub.API.BeatClub.Services
             if (existingMembership == null)
                 return new MembershipResponse("Membership not found.");
 
-            existingMembership.title = membership.title;
-            existingMembership.price = membership.price;
-            existingMembership.feature = membership.feature;
-            existingMembership.description = membership.description;
-            existingMembership.urlToImage = membership.urlToImage;
+            existingMembership.Title = membership.Title;
+            existingMembership.Price = membership.Price;
+            existingMembership.Feature = membership.Feature;
+            existingMembership.Description = membership.Description;
+            existingMembership.UrlToImage = membership.UrlToImage;
             
 
             try

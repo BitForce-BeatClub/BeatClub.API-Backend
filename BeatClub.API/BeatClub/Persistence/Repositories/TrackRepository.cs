@@ -31,20 +31,20 @@ namespace BeatClub.API.BeatClub.Persistence.Repositories
         {
             return await _context.Tracks
                 .Include(p => p.User)
-                .FirstOrDefaultAsync(p => p.id == trackId);
+                .FirstOrDefaultAsync(p => p.Id == trackId);
         }
 
         public async Task<Track> FindByTitleAsync(string title)
         {
             return await _context.Tracks
                 .Include(p => p.User)
-                .FirstOrDefaultAsync(p => p.title == title);
+                .FirstOrDefaultAsync(p => p.Title == title);
         }
 
-        public async Task<IEnumerable<Track>> FindByUserIdAsync(string userId)
+        public async Task<IEnumerable<Track>> FindByUserIdAsync(int userId)
         {
             return await _context.Tracks
-                .Where(p => p.userId == userId)
+                .Where(p => p.UserId == userId)
                 .Include(p=>p.User)
                 .ToListAsync();
 

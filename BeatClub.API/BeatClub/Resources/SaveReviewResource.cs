@@ -13,10 +13,10 @@ namespace BeatClub.API.BeatClub.Resources
         public int Qualification { get; set; }
         
         [Required]
-        public string UserProducerId { get; set; }
+        public int UserProducerId { get; set; }
         
         [Required]
-        public string UserArtistId { get; set; }
+        public int UserArtistId { get; set; }
         
         [Required]
         public DateTime CreateAt { get; set; }

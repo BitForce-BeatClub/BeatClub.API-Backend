@@ -1,4 +1,5 @@
 ﻿using BeatClub.API.BeatClub.Domain.Models;
+using BeatClub.API.Security.Domain.Models;
 using BeatClub.API.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,47 +25,48 @@ namespace BeatClub.API.Shared.Persistence.Contexts
             
             //Users
             builder.Entity<User>().ToTable("Users");
-            builder.Entity<User>().HasKey(p => p.id);
-            builder.Entity<User>().Property(p => p.id).IsRequired();
-            builder.Entity<User>().Property(p => p.nickName).IsRequired().HasMaxLength(50);
-            builder.Entity<User>().Property(p => p.firstName).IsRequired().HasMaxLength(50);
-            builder.Entity<User>().Property(p => p.lastName).IsRequired().HasMaxLength(50);
-            //builder.Entity<User>().Property(p => p.userType).IsRequired().HasMaxLength(50);
-            builder.Entity<User>().Property(p => p.urlToImage).IsRequired().HasMaxLength(200);
-            builder.Entity<User>().Property(p => p.location).IsRequired().HasMaxLength(150);
-            builder.Entity<User>().Property(p => p.email).IsRequired().HasMaxLength(150);
-            //builder.Entity<User>().Property(p => p.membership).IsRequired().HasMaxLength(50);
-            builder.Entity<User>().Property(p => p.description).IsRequired().HasMaxLength(200);
+            builder.Entity<User>().HasKey(p => p.Id);
+            builder.Entity<User>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<User>().Property(p => p.Nickname).IsRequired().HasMaxLength(50);
+            builder.Entity<User>().Property(p => p.Firstname).IsRequired().HasMaxLength(50);
+            builder.Entity<User>().Property(p => p.Lastname).IsRequired().HasMaxLength(50);
+            builder.Entity<User>().Property(p => p.Usertype).IsRequired().HasMaxLength(50);
+            builder.Entity<User>().Property(p => p.UrlToImage).IsRequired().HasMaxLength(200);
+            builder.Entity<User>().Property(p => p.Location).IsRequired().HasMaxLength(150);
+            builder.Entity<User>().Property(p => p.Email).IsRequired().HasMaxLength(200);
+            //builder.Entity<User>().Property(p => p.MembershipId).IsRequired();
+            //builder.Entity<User>().Property(p => p.CreateAt).IsRequired();
             
             //Payments
             builder.Entity<Payment>().ToTable("Payments");
-            builder.Entity<Payment>().HasKey(p => p.id);
-            builder.Entity<Payment>().Property(p => p.id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Payment>().Property(p => p.plan).IsRequired().HasMaxLength(50);
-            builder.Entity<Payment>().Property(p => p.price).IsRequired();
-            builder.Entity<Payment>().Property(p => p.date).IsRequired();
-            builder.Entity<Payment>().Property(p => p.userId).IsRequired();
-            
+            builder.Entity<Payment>().HasKey(p => p.Id);
+            builder.Entity<Payment>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Payment>().Property(p => p.Description).IsRequired().HasMaxLength(120);
+            builder.Entity<Payment>().Property(p => p.Amount).IsRequired();
+            builder.Entity<Payment>().Property(p => p.PayMethod).IsRequired().HasMaxLength(50);
+            builder.Entity<Payment>().Property(p => p.UserId).IsRequired();
+            builder.Entity<Payment>().Property(p => p.CreateAt).IsRequired();
+
             //Messages
             builder.Entity<Message>().ToTable("Messages");
-            builder.Entity<Message>().HasKey(p => p.id);
-            builder.Entity<Message>().Property(p => p.id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Message>().Property(p => p.content).IsRequired().HasMaxLength(120);
-            builder.Entity<Message>().Property(p => p.userIdFrom).IsRequired();
-            builder.Entity<Message>().Property(p => p.userIdTo).IsRequired();
-            builder.Entity<Message>().Property(p => p.messageDate).IsRequired();
+            builder.Entity<Message>().HasKey(p => p.Id);
+            builder.Entity<Message>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Message>().Property(p => p.Content).IsRequired().HasMaxLength(120);
+            builder.Entity<Message>().Property(p => p.UserIdTo).IsRequired();
+            builder.Entity<Message>().Property(p => p.UserIdFrom).IsRequired();
+            builder.Entity<Message>().Property(p => p.MessageDate).IsRequired();
             
             //Track
             builder.Entity<Track>().ToTable("Tracks");
-            builder.Entity<Track>().HasKey(p => p.id);
-            builder.Entity<Track>().Property(p => p.id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Track>().Property(p => p.title).IsRequired().HasMaxLength(50);
-            builder.Entity<Track>().Property(p => p.privacy).IsRequired().HasMaxLength(50);
-            builder.Entity<Track>().Property(p => p.genre).IsRequired().HasMaxLength(50);
-            builder.Entity<Track>().Property(p => p.artist).IsRequired().HasMaxLength(50);
-            builder.Entity<Track>().Property(p => p.cover).IsRequired().HasMaxLength(200);
-            builder.Entity<Track>().Property(p => p.source).IsRequired().HasMaxLength(200);
-            builder.Entity<Track>().Property(p => p.publishDate).IsRequired();
+            builder.Entity<Track>().HasKey(p => p.Id);
+            builder.Entity<Track>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Track>().Property(p => p.Title).IsRequired().HasMaxLength(50);
+            builder.Entity<Track>().Property(p => p.Privacy).IsRequired().HasMaxLength(50);
+            builder.Entity<Track>().Property(p => p.Artist).IsRequired().HasMaxLength(50);
+            builder.Entity<Track>().Property(p => p.Genre).IsRequired().HasMaxLength(50);
+            builder.Entity<Track>().Property(p => p.Cover).IsRequired().HasMaxLength(200);
+            builder.Entity<Track>().Property(p => p.Source).IsRequired().HasMaxLength(200);
+            builder.Entity<Track>().Property(p => p.PublishDate).IsRequired();
 
             //Publication
             builder.Entity<Publication>().ToTable("Publications");
@@ -76,13 +78,13 @@ namespace BeatClub.API.Shared.Persistence.Contexts
            
             //Membership
             builder.Entity<Membership>().ToTable("Memberships");
-            builder.Entity<Membership>().HasKey(p => p.id);
-            builder.Entity<Membership>().Property(p => p.id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Membership>().Property(p => p.title).IsRequired().HasMaxLength(50);
-            builder.Entity<Membership>().Property(p => p.price).IsRequired();
-            builder.Entity<Membership>().Property(p => p.feature).IsRequired().HasMaxLength(120);
-            builder.Entity<Membership>().Property(p => p.description).IsRequired().HasMaxLength(120);
-            builder.Entity<Membership>().Property(p => p.urlToImage).IsRequired().HasMaxLength(200);
+            builder.Entity<Membership>().HasKey(p => p.Id);
+            builder.Entity<Membership>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Membership>().Property(p => p.Title).IsRequired().HasMaxLength(50);
+            builder.Entity<Membership>().Property(p => p.Price).IsRequired();
+            builder.Entity<Membership>().Property(p => p.Feature).IsRequired().HasMaxLength(120);
+            builder.Entity<Membership>().Property(p => p.Description).IsRequired().HasMaxLength(120);
+            builder.Entity<Membership>().Property(p => p.UrlToImage).IsRequired().HasMaxLength(200);
             
             //Reviews
             builder.Entity<Review>().ToTable("Reviews");

@@ -1,4 +1,5 @@
 ﻿using System;
+using BeatClub.API.Security.Domain.Models;
 
 namespace BeatClub.API.BeatClub.Domain.Models
 {
@@ -13,7 +14,7 @@ namespace BeatClub.API.BeatClub.Domain.Models
         public DateTime CreateAt { get; set; }
         
         //Relationships
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public User User { get; set; }
 
     }

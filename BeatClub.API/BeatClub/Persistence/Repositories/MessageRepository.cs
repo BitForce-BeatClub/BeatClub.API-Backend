@@ -18,8 +18,8 @@ namespace BeatClub.API.BeatClub.Persistence.Repositories
         public async Task<IEnumerable<Message>> ListAsync()
         {
             return await _context.Messages
-                .Include(p => p.UserFrom)
-                .Include(p=>p.UserTo)
+                .Include(p => p.UserTo)
+                .Include(p=>p.UserFrom)
                 .ToListAsync();
         }
 
@@ -31,32 +31,32 @@ namespace BeatClub.API.BeatClub.Persistence.Repositories
         public async Task<Message> FindByIdAsync(int messageId)
         {
             return await _context.Messages
-                .Include(p => p.UserFrom)
-                .Include(p=>p.userIdTo)
-                .FirstOrDefaultAsync(p => p.id == messageId);
+                .Include(p => p.UserTo)
+                .Include(p=>p.UserFrom)
+                .FirstOrDefaultAsync(p => p.Id == messageId);
         }
 
         public async Task<Message> FindByContentAsync(string content)
         {
             return await _context.Messages
-                .Include(p => p.UserFrom)
-                .Include(p=>p.UserTo)
-                .FirstOrDefaultAsync(p => p.content == content);
+                .Include(p => p.UserTo)
+                .Include(p=>p.UserFrom)
+                .FirstOrDefaultAsync(p => p.Content == content);
         }
 
-        public async Task<IEnumerable<Message>> FindByUserIdFromAsync(string userIdFrom)
+        public async Task<IEnumerable<Message>> FindByUserIdToAsync(int userIdTo)
         {
             return await _context.Messages.
-                Where(p=>p.userIdFrom==userIdFrom)
-                .Include(p=>p.UserFrom)
+                Where(p=>p.UserIdTo==userIdTo)
+                .Include(p=>p.UserTo)
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Message>> FindByUserIdToAsync(string userIdTo)
+        public async Task<IEnumerable<Message>> FindByUserIdFromAsync(int userIdFrom)
         {
             return await _context.Messages.
-                Where(p=>p.userIdTo==userIdTo)
-                .Include(p=>p.UserTo)
+                Where(p=>p.UserIdFrom==userIdFrom)
+                .Include(p=>p.UserIdFrom)
                 .ToListAsync();
         }
 

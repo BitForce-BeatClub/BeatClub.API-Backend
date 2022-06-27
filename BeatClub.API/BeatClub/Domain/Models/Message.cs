@@ -1,17 +1,21 @@
 ﻿using System;
+using BeatClub.API.Security.Domain.Models;
 
 namespace BeatClub.API.BeatClub.Domain.Models
 {
     public class Message
     {
-        public int id { get; set; }
-        public string content { get; set; }
-        public DateTime messageDate { get; set; }
+        public int Id { get; set; }
+        
+        public string Content { get; set; }
+        
+        public DateTime MessageDate { get; set; }
         
         //Relationships
-        public string userIdFrom { get; set; }
+        public int UserIdFrom { get; set; }
         public User UserFrom { get; set; }
-        public string userIdTo { get; set; }
+        
+        public int UserIdTo { get; set; }
         public User UserTo { get; set; }
     }
 }

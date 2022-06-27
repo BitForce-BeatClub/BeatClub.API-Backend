@@ -31,7 +31,7 @@ namespace BeatClub.API.BeatClub.Controllers
             OperationId = "GetUserTracks",
             Tags = new []{"Users"}
         )]
-        public async Task<IEnumerable<TrackResource>> GetAllByUserId(string userId)
+        public async Task<IEnumerable<TrackResource>> GetAllByUserId(int userId)
         {
             var tracks = await _trackService.ListByUserIdAsync(userId);
 

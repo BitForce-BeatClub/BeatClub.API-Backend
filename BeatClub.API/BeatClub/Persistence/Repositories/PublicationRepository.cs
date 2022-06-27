@@ -39,7 +39,7 @@ namespace BeatClub.API.BeatClub.Persistence.Repositories
                 .FirstOrDefaultAsync(p => p.Title == title);
         }
 
-        public async Task<IEnumerable<Publication>> FindByUserIdAsync(string userId)
+        public async Task<IEnumerable<Publication>> FindByUserIdAsync(int userId)
         {
             return await _context.Publications
                 .Where(p=>p.UserId==userId)

@@ -5,6 +5,7 @@ using BeatClub.API.BeatClub.Domain.Models;
 using BeatClub.API.BeatClub.Domain.Repositories;
 using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Domain.Services.Communication;
+using BeatClub.API.Security.Domain.Repositories;
 using BeatClub.API.Shared.Domain.Repositories;
 
 namespace BeatClub.API.BeatClub.Services
@@ -27,12 +28,12 @@ namespace BeatClub.API.BeatClub.Services
             return await _messageRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Message>> ListByUserIdFromAsync(string userIdFrom)
+        public async Task<IEnumerable<Message>> ListByUserIdFromAsync(int userIdFrom)
         {
             return await _messageRepository.FindByUserIdFromAsync(userIdFrom);
         }
 
-        public async Task<IEnumerable<Message>> ListByUserIdToAsync(string userIdTo)
+        public async Task<IEnumerable<Message>> ListByUserIdToAsync(int userIdTo)
         {
             return await _messageRepository.FindByUserIdToAsync(userIdTo);
         }
@@ -41,21 +42,21 @@ namespace BeatClub.API.BeatClub.Services
         {
             // Validate User Id
 
-            var existingUserIdFrom = _userRepository.FindByIdAsync(message.userIdFrom);
+            var existingUserFrom = _userRepository.FindByIdAsync(message.UserIdFrom);
 
-            if (existingUserIdFrom == null)
-                return new MessageResponse("Invalid UserIdFrom");
+            if (existingUserFrom == null)
+                return new MessageResponse("Invalid UserFrom");
             
             // Validate User Id
 
-            var existingUserIdTo = _userRepository.FindByIdAsync(message.userIdTo);
+            var existingUserTo = _userRepository.FindByIdAsync(message.UserIdTo);
 
-            if (existingUserIdTo == null)
-                return new MessageResponse("Invalid UserIdTo");
+            if (existingUserTo == null)
+                return new MessageResponse("Invalid UserTo");
             
             // Valid Content
 
-            var existingMessageWithContent = await _messageRepository.FindByContentAsync(message.content);
+            var existingMessageWithContent = await _messageRepository.FindByContentAsync(message.Content);
 
             if (existingMessageWithContent != null)
                 return new MessageResponse("Message Content already exists.");
@@ -85,29 +86,30 @@ namespace BeatClub.API.BeatClub.Services
             
             // Validate User Id
 
-            var existingUserIdFrom = _userRepository.FindByIdAsync(message.userIdFrom);
+            var existingUserFrom = _userRepository.FindByIdAsync(message.UserIdFrom);
 
-            if (existingUserIdFrom == null)
-                return new MessageResponse("Invalid UserIdFrom");
+            if (existingUserFrom == null)
+                return new MessageResponse("Invalid UserFrom");
             
             // Validate User Id
 
-            var existingUserIdTo = _userRepository.FindByIdAsync(message.userIdTo);
+            var existingUserTo = _userRepository.FindByIdAsync(message.UserIdTo);
 
-            if (existingUserIdTo == null)
-                return new MessageResponse("Invalid UserIdTo");
+            if (existingUserTo == null)
+                return new MessageResponse("Invalid UserTo");
             
             // Valid Content
 
-            var existingMessageWithContent = await _messageRepository.FindByContentAsync(message.content);
+            var existingMessageWithContent = await _messageRepository.FindByContentAsync(message.Content);
 
-            if (existingMessageWithContent != null && existingMessageWithContent.id != existingMessage.id)
+            if (existingMessageWithContent != null && existingMessageWithContent.Id != existingMessage.Id)
                 return new MessageResponse("Message Content already exists.");
 
-            existingMessage.content = message.content;
-            existingMessage.userIdTo = message.userIdTo;
-            existingMessage.userIdFrom = message.userIdFrom;
-            existingMessage.messageDate = message.messageDate;
+            existingMessage.Content = message.Content;
+            //existingMessage.CreatAt = message.CreatAt;
+            existingMessage.UserIdFrom = message.UserIdFrom;
+            existingMessage.UserIdTo = message.UserIdTo;
+            existingMessage.MessageDate = message.MessageDate;
 
             try
             {

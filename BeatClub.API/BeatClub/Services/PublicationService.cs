@@ -5,6 +5,7 @@ using BeatClub.API.BeatClub.Domain.Models;
 using BeatClub.API.BeatClub.Domain.Repositories;
 using BeatClub.API.BeatClub.Domain.Services;
 using BeatClub.API.BeatClub.Domain.Services.Communication;
+using BeatClub.API.Security.Domain.Repositories;
 using BeatClub.API.Shared.Domain.Repositories;
 
 namespace BeatClub.API.BeatClub.Services
@@ -27,7 +28,7 @@ namespace BeatClub.API.BeatClub.Services
             return await _publicationRepository.ListAsync();
         }
 
-        public async Task<IEnumerable<Publication>> ListByUserIdAsync(string userId)
+        public async Task<IEnumerable<Publication>> ListByUserIdAsync(int userId)
         {
             return await _publicationRepository.FindByUserIdAsync(userId);
         }
