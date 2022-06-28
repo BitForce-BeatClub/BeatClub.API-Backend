@@ -1,0 +1,7 @@
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\obj\Release\net6.0\BeatClub.API.csproj.AssemblyReference.cache
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\obj\Release\net6.0\BeatClub.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\obj\Release\net6.0\BeatClub.API.AssemblyInfoInputs.cache
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\obj\Release\net6.0\BeatClub.API.AssemblyInfo.cs
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\obj\Release\net6.0\BeatClub.API.csproj.CoreCompileInputs.cache
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\obj\Release\net6.0\BeatClub.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Josmar\Documents\GitHub\BeatClub.API-Backend\BeatClub.API\obj\Release\net6.0\BeatClub.API.MvcApplicationPartsAssemblyInfo.cache

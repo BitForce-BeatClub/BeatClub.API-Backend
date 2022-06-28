@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARzHQ9lbaikStBJolJFPbeAAAAAACAAAAAAAQZgAAAAEAACAAAAD5fJ8WGXIt6UIeiwlgI71+9dc0wDO3wkeow0ZTPzGB6wAAAAAOgAAAAAIAACAAAADiboKNa12xSDbZJH9SQDONeKkfa6DZ8QT0BPXqmBzMM4AAAAAETGWmWECOhoM+g5LPvKfuUTEKv6w+HsnpiyOtXCkM6REedlS3v+uXYBxC/mVQ/NeweX+2HryCtRUPoaQaMHr5VuRD96KPNAaU9/s3eXuqWfLKRIVIz4xIndy++JargmPx1ctRu7s7oR1jmU2dt7KkjZX1TUjSlW2Lc7UcUHTpIkAAAABuvx/tBFx/vDZ/vQfDQZFpu9W0njT4mw7SxCsyDmZrwOyWF0IfnfTR/b7V6VopetkxjWKxMX4C4R+gRBAJbVh6</EncryptedPassword>
+    <History>False|2022-06-28T00:29:45.2625088Z;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:beatclubapidbserver123.database.windows.net,1433%3bInitial Catalog=BeatClub.API_db%3bUser Id=josmar%40beatclubapidbserver123%3bPassword=Aries123#</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
