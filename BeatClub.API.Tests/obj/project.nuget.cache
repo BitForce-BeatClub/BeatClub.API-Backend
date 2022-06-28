@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "psHFSmEjPgMFrkhSMBFv2DbdCHaBTHxDoaq0mXBFV8+A+cO9oakZH6pcmOaWTfywbm1NES63ivFdWXiomf2zDA==",
+  "dgSpecHash": "P25btD6ZV8265pNcjJHbNbV0LUVKtKgnnC1tkDvM9N6oySCp64SRcSAHQWNhnhIxhPapGMurWdQQGZUeR41w4w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Josmar\\Documents\\GitHub\\BeatClub.API-Backend\\BeatClub.API.Tests\\BeatClub.API.Tests.csproj",
   "expectedPackageFiles": [
